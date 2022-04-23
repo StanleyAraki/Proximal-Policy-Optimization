@@ -1,11 +1,13 @@
 import os
 import gym
+import matplotlib.pyplot as plt
 import numpy as np
 import torch as T
 import torch.nn.functional as F
 import torch.nn as nn
 import torch.optim as optim
 from torch.distributions.categorical import Categorical
+from utils import plot_learning_curve
 
 class PPOMemory:
     def __init__(self, batch_size):
@@ -54,7 +56,7 @@ class ActorNetwork(nn.Module):
 
         self.checkpoint_file = os.path.join(chkpt_dir, 'actor_torch_ppo')
         self.actor = nn.Sequential(
-                nn.Linear(*input_dims, fc1_dims),
+                nn.Linear(*input_dims, fc1_dims), # Need to manually pass in input
                 nn.ReLU(),
                 nn.Linear(fc1_dims, fc2_dims),
                 nn.ReLU(),
@@ -88,7 +90,7 @@ class CriticNetwork(nn.Module):
 
         self.checkpoint_file = os.path.join(chkpt_dir, 'critic_torch_ppo')
         self.critic = nn.Sequential(
-                nn.Linear(*input_dims, fc1_dims),
+                nn.Linear(*input_dims, fc1_dims), # Need to manually pass in inputs
                 nn.ReLU(),
                 nn.Linear(fc1_dims, fc2_dims),
                 nn.ReLU(),
@@ -136,7 +138,10 @@ class Agent:
     
     def choose_action(self, observation):
         # handle choosing an action that takes an observation of the current state of the environment, converts to torch tensor
-        state = T.tensor([observation], dtype=T.float).to(self.actor.device)
+        state = T.tensor([observation], dtype=T.float)
+        print("TYPE: ", state.type())
+        # state = T.tensor([observation], dtype=T.float).to(self.actor.device)
+        state = state.to(self.actor.device)
 
         dist = self.actor(state)
         value = self.critic(state)
@@ -197,7 +202,7 @@ class Agent:
         self.memory.clear_memory()
 
 if __name__ == '__main__':
-    env = gym.make('Pong-v0')
+    env = gym.make('ALE/Pong-v5')
     N = 20
     batch_size = 5
     n_epochs = 4
@@ -205,10 +210,62 @@ if __name__ == '__main__':
 
     print(env.observation_space.shape) # (210, 160, 3)
 
-    env2 = gym.make('CartPole-v0')
+    env2 = gym.make('CartPole-v1')
     print(env2.observation_space.shape)
+
+    # pre-process image 
+    def prepro(image):
+        image = image[35:195]  # crop
+        image = image[::2, ::2, 0]  # downsample by factor of 2
+        image[image == 144] = 0  # erase background (background type 1)
+        image[image == 109] = 0  # erase background (background type 2)
+        image[image != 0] = 1  # everything else (paddles, ball) just set to 1
+        return np.reshape(image, (1,80,80))
+    
+    raw_image = env.reset()
+    preprocessed_image = prepro(raw_image) #(1, 80, 80)
+
+    # plt.imshow(preprocessed_image.squeeze(0))
+    flattened = preprocessed_image.flatten()
+    # plt.show()
 
     # Reason for bug: when the input size is greater than (1, ), the orderings of the inputs shift. 
     # Will fix bug later.
-    agent = Agent(num_actions = env.action_space.n, batch_size = 5, alpha = 0.0003, num_epochs = 4, input_dims = (4,))
-    
+    agent = Agent(num_actions = env.action_space.n, batch_size = 5, alpha = 0.0003, num_epochs = 4, input_dims = flattened.shape)
+    n_games = 300
+
+    figure_file = 'plots/Pong.png'
+
+    best_score = env.reward_range[0]
+    score_history = []
+
+    learn_iters = 0
+    avg_score = 0
+    n_steps = 0
+
+    for i in range(n_games):
+        observation = env.reset()
+        observation = prepro(observation)
+        done = False
+        score = 0
+        while not done:
+            action, prob, val = agent.choose_action(observation)
+            print("Successfully chooses action")
+            observation_, reward, done, info = env.step(action)
+            n_steps += 1
+            score += reward
+            agent.remember(observation, action, prob, val, reward, done)
+            if n_steps % N == 0: # if true, it's time to perform learning function
+                agent.learn()
+                learn_iters += 1
+            observation = observation_
+        score_history.append(score)
+        avg_score = np.mean(score_history[-100:])
+
+        if avg_score > best_score: # if best score found
+            best_score = avg_score
+            agent.save_models()
+
+        print('episode', i, 'score %.1f' % score, 'avg score %.1f' % avg_score,
+                'time_steps', n_steps, 'learning_steps', learn_iters)
+    x = [i+1 for i in range(len(score_history))]
