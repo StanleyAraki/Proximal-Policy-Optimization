@@ -138,8 +138,8 @@ class Agent:
     
     def choose_action(self, observation):
         # handle choosing an action that takes an observation of the current state of the environment, converts to torch tensor
-        state = T.tensor([observation], dtype=T.float)
-        print("TYPE: ", state.type())
+        state = T.tensor([observation.flatten()], dtype=T.float) # Need to flatten the observation from (1, 80, 80) to (1, 6400)
+        # print("TYPE: ", state.type())
         # state = T.tensor([observation], dtype=T.float).to(self.actor.device)
         state = state.to(self.actor.device)
 
@@ -173,7 +173,7 @@ class Agent:
 
             values = T.tensor(values).to(self.actor.device)
             for batch in batches:
-                states = T.tensor(state_arr[batch], dtype=T.float).to(self.actor.device)
+                states = T.tensor(state_arr[batch].reshape(5, 6400), dtype=T.float).to(self.actor.device)
                 old_probs = T.tensor(old_probs_arr[batch]).to(self.actor.device)
                 actions = T.tensor(action_arr[batch]).to(self.actor.device)
                 # we have the bottom of the numerator now(pi old)
@@ -245,17 +245,18 @@ if __name__ == '__main__':
 
     for i in range(n_games):
         observation = env.reset()
-        observation = prepro(observation)
+        # observation = prepro(observation)
         done = False
         score = 0
         while not done:
+            observation = prepro(observation) # need to preprocess each time
             action, prob, val = agent.choose_action(observation)
-            print("Successfully chooses action")
             observation_, reward, done, info = env.step(action)
             n_steps += 1
             score += reward
             agent.remember(observation, action, prob, val, reward, done)
             if n_steps % N == 0: # if true, it's time to perform learning function
+                # print("Performs learning")
                 agent.learn()
                 learn_iters += 1
             observation = observation_
@@ -269,3 +270,64 @@ if __name__ == '__main__':
         print('episode', i, 'score %.1f' % score, 'avg score %.1f' % avg_score,
                 'time_steps', n_steps, 'learning_steps', learn_iters)
     x = [i+1 for i in range(len(score_history))]
+
+# if __name__ == '__main__':
+#     # def prepro(image):
+#     #     image = image[35:195]  # crop
+#     #     image = image[::2, ::2, 0]  # downsample by factor of 2
+#     #     image[image == 144] = 0  # erase background (background type 1)
+#     #     image[image == 109] = 0  # erase background (background type 2)
+#     #     image[image != 0] = 1  # everything else (paddles, ball) just set to 1
+#     #     return np.reshape(image, (1,80,80))
+    
+#     env = gym.make('CartPole-v0')
+#     N = 20
+#     batch_size = 5
+#     n_epochs = 4
+#     alpha = 0.0003
+#     # raw_image = env.reset()
+#     # preprocessed_image = prepro(raw_image) #(1, 80, 80)
+#     # flattened = preprocessed_image.flatten()
+#     agent = Agent(num_actions=env.action_space.n, batch_size=batch_size, 
+#                     alpha=alpha, num_epochs=n_epochs, 
+#                     input_dims=env.observation_space.shape) # does work on more advanced environments but requires more fine-tuning
+#     n_games = 300
+
+#     figure_file = 'plots/Pong.png'
+
+#     best_score = env.reward_range[0]
+#     score_history = []
+
+#     learn_iters = 0
+#     avg_score = 0
+#     n_steps = 0
+
+#     for i in range(n_games):
+#         observation = env.reset()
+#         # observation = prepro(observation)
+#         done = False
+#         score = 0
+#         while not done:
+#             action, prob, val = agent.choose_action(observation)
+#             observation_, reward, done, info = env.step(action)
+#             n_steps += 1
+#             score += reward
+#             agent.remember(observation, action, prob, val, reward, done)
+#             if n_steps % N == 0: # if true, it's time to perform learning function
+#                 agent.learn()
+#                 learn_iters += 1
+#             observation = observation_
+#         score_history.append(score)
+#         avg_score = np.mean(score_history[-100:])
+
+#         if avg_score > best_score: # if best score found
+#             best_score = avg_score
+#             agent.save_models()
+
+#         print('episode', i, 'score %.1f' % score, 'avg score %.1f' % avg_score,
+#                 'time_steps', n_steps, 'learning_steps', learn_iters)
+#     x = [i+1 for i in range(len(score_history))]
+#     # print("Final Score: ", score_history[-1])
+    
+#     plot_learning_curve(x, score_history, figure_file, "Training Episodes", "Average Scores")
+
