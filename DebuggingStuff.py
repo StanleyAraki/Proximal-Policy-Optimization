@@ -54,15 +54,26 @@ class ActorNetwork(nn.Module):
             fc1_dims=256, fc2_dims=256, chkpt_dir='tmp/ppo'):
         super(ActorNetwork, self).__init__()
 
-        self.checkpoint_file = os.path.join(chkpt_dir, 'actor_torch_ppo')
+        self.checkpoint_file = os.path.join(chkpt_dir, 'actor_torch_ppo_Breakout_conv')
         self.actor = nn.Sequential(
-                nn.Linear(*input_dims, fc1_dims), # Need to manually pass in input
+                nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4), # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
                 nn.ReLU(),
-                nn.Linear(fc1_dims, fc2_dims),
+                nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2), # 19 x 19 becomes 9 x 9
                 nn.ReLU(),
-                nn.Linear(fc2_dims, n_actions),
-                nn.Softmax(dim=-1) # SoftMax takes care of the fact that we're dealing with probabilities and they sum to 1
+                nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1), # 9 x 9 becomes 7 x 7
+                nn.ReLU(),
+                nn.Linear(in_features = 7 * 7 * 64, out_features=512),
+                nn.Softmax(dim=-1)
         )
+        print("Finished running actor")
+        # self.actor = nn.Sequential(
+        #         nn.Linear(*input_dims, fc1_dims), # Need to manually pass in input
+        #         nn.ReLU(),
+        #         nn.Linear(fc1_dims, fc2_dims),
+        #         nn.ReLU(),
+        #         nn.Linear(fc2_dims, n_actions),
+        #         nn.Softmax(dim=-1) # SoftMax takes care of the fact that we're dealing with probabilities and they sum to 1
+        # )
 
         self.optimizer = optim.Adam(self.parameters(), lr=alpha)
         # self.device = T.device('cuda:0' if T.cuda.is_available() else 'cpu')
@@ -70,6 +81,7 @@ class ActorNetwork(nn.Module):
         self.to(self.device)
 
     def forward(self, state):
+        print("Works forward actornetwork")
         dist = self.actor(state)
         dist = Categorical(dist)
         # Calculating series of probabilities that we will use to get our actual actions
@@ -82,20 +94,30 @@ class ActorNetwork(nn.Module):
 
     def load_checkpoint(self):
         self.load_state_dict(T.load(self.checkpoint_file))
-
+        
 class CriticNetwork(nn.Module):
     def __init__(self, input_dims, alpha, fc1_dims=256, fc2_dims=256,
             chkpt_dir='tmp/ppo'):
         super(CriticNetwork, self).__init__()
 
-        self.checkpoint_file = os.path.join(chkpt_dir, 'critic_torch_ppo')
+        self.checkpoint_file = os.path.join(chkpt_dir, 'critic_torch_ppo_Breakout_conv')
         self.critic = nn.Sequential(
-                nn.Linear(*input_dims, fc1_dims), # Need to manually pass in inputs
+                nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4), # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
                 nn.ReLU(),
-                nn.Linear(fc1_dims, fc2_dims),
+                nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2), # 19 x 19 becomes 9 x 9
                 nn.ReLU(),
-                nn.Linear(fc2_dims, 1)
-        ) # handles batch size automatically
+                nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1), # 9 x 9 becomes 7 x 7
+                nn.ReLU(),
+                nn.Linear(in_features = 7 * 7 * 64, out_features=1) # don't know if out_features should be 1
+        )
+        print("Finished running critic")
+        # self.critic = nn.Sequential(
+        #         nn.Linear(*input_dims, fc1_dims), # Need to manually pass in inputs
+        #         nn.ReLU(),
+        #         nn.Linear(fc1_dims, fc2_dims),
+        #         nn.ReLU(),
+        #         nn.Linear(fc2_dims, 1)
+        # ) # handles batch size automatically
 
         self.optimizer = optim.Adam(self.parameters(), lr=alpha)
         # self.device = T.device('cuda:0' xif T.cuda.is_available() else 'cpu')
@@ -104,6 +126,8 @@ class CriticNetwork(nn.Module):
 
     def forward(self, state):
         value = self.critic(state)
+        print("Works forward criticnetwork")
+        # value = value.reshape((-1, 7 * 7 * 64))
 
         return value
 
@@ -112,6 +136,7 @@ class CriticNetwork(nn.Module):
 
     def load_checkpoint(self):
         self.load_state_dict(T.load(self.checkpoint_file))
+
 
 class Agent:
     def __init__(self, num_actions, input_dims, gamma=0.99, alpha=0.0003, gae_lambda=0.95, policy_clip = 0.2, batch_size=64, N=2048, num_epochs=10): # N is horizon, number of steps before update
@@ -138,9 +163,8 @@ class Agent:
     
     def choose_action(self, observation):
         # handle choosing an action that takes an observation of the current state of the environment, converts to torch tensor
-        state = T.tensor([observation.flatten()], dtype=T.float) # Need to flatten the observation from (1, 80, 80) to (1, 6400)
-        # print("TYPE: ", state.type())
-        # state = T.tensor([observation], dtype=T.float).to(self.actor.device)
+        # state = T.tensor([observation.flatten()], dtype=T.float) # Need to flatten the observation from (1, 80, 80) to (1, 6400)
+        state = T.tensor([observation], dtype=T.float) # changed from [observation] to observation
         state = state.to(self.actor.device)
 
         dist = self.actor(state)
@@ -173,7 +197,8 @@ class Agent:
 
             values = T.tensor(values).to(self.actor.device)
             for batch in batches:
-                states = T.tensor(state_arr[batch].reshape(5, 6400), dtype=T.float).to(self.actor.device)
+                states = T.tensor(state_arr[batch].reshape(1, 3136), dtype=T.float).to(self.actor.device)
+                print("Finished running states")
                 old_probs = T.tensor(old_probs_arr[batch]).to(self.actor.device)
                 actions = T.tensor(action_arr[batch]).to(self.actor.device)
                 # we have the bottom of the numerator now(pi old)
@@ -201,40 +226,31 @@ class Agent:
                 self.critic.optimizer.step() # upstep optimizer
         self.memory.clear_memory()
 
+# Preprocess image(Code from class)
+def prepro(image):
+    image = image[35:195]  # crop
+    image = image[::2, ::2, 0]  # downsample by factor of 2
+    image[image == 144] = 0  # erase background (background type 1)
+    image[image == 109] = 0  # erase background (background type 2)
+    image[image != 0] = 1  # everything else (paddles, ball) just set to 1
+    return np.reshape(image, (80, 80))
+
 if __name__ == '__main__':
-    env = gym.make('ALE/Pong-v5')
+    env = gym.make('BreakoutDeterministic-v4')
     N = 20
     batch_size = 5
     n_epochs = 4
     alpha = 0.0003
 
-    print(env.observation_space.shape) # (210, 160, 3)
-
-    env2 = gym.make('CartPole-v1')
-    print(env2.observation_space.shape)
-
-    # pre-process image 
-    def prepro(image):
-        image = image[35:195]  # crop
-        image = image[::2, ::2, 0]  # downsample by factor of 2
-        image[image == 144] = 0  # erase background (background type 1)
-        image[image == 109] = 0  # erase background (background type 2)
-        image[image != 0] = 1  # everything else (paddles, ball) just set to 1
-        return np.reshape(image, (1,80,80))
-    
     raw_image = env.reset()
-    preprocessed_image = prepro(raw_image) #(1, 80, 80)
+    preprocessed_image = prepro(raw_image)  # (1, 80, 80)
 
-    # plt.imshow(preprocessed_image.squeeze(0))
     flattened = preprocessed_image.flatten()
-    # plt.show()
+    agent = Agent(num_actions=env.action_space.n, batch_size=5,
+                  alpha=0.0003, num_epochs=4, input_dims=preprocessed_image.shape)
+    n_games = 5  # 45 mins for 100 iterations of training
 
-    # Reason for bug: when the input size is greater than (1, ), the orderings of the inputs shift. 
-    # Will fix bug later.
-    agent = Agent(num_actions = env.action_space.n, batch_size = 5, alpha = 0.0003, num_epochs = 4, input_dims = flattened.shape)
-    n_games = 300
-
-    figure_file = 'plots/Pong.png'
+    figure_file = 'plots/Breakout_Conv.png'
 
     best_score = env.reward_range[0]
     score_history = []
@@ -243,91 +259,33 @@ if __name__ == '__main__':
     avg_score = 0
     n_steps = 0
 
+    # Load model
+    # agent.load_models()
+
     for i in range(n_games):
         observation = env.reset()
-        # observation = prepro(observation)
         done = False
         score = 0
         while not done:
-            observation = prepro(observation) # need to preprocess each time
+            observation = prepro(observation)  # need to preprocess each time
             action, prob, val = agent.choose_action(observation)
             observation_, reward, done, info = env.step(action)
             n_steps += 1
             score += reward
             agent.remember(observation, action, prob, val, reward, done)
-            if n_steps % N == 0: # if true, it's time to perform learning function
-                # print("Performs learning")
+            if n_steps % N == 0:  # if true, it's time to perform learning function
                 agent.learn()
                 learn_iters += 1
             observation = observation_
         score_history.append(score)
         avg_score = np.mean(score_history[-100:])
 
-        if avg_score > best_score: # if best score found
+        if avg_score > best_score:  # if best score found
             best_score = avg_score
             agent.save_models()
 
         print('episode', i, 'score %.1f' % score, 'avg score %.1f' % avg_score,
-                'time_steps', n_steps, 'learning_steps', learn_iters)
+              'time_steps', n_steps, 'learning_steps', learn_iters)
     x = [i+1 for i in range(len(score_history))]
-
-# if __name__ == '__main__':
-#     # def prepro(image):
-#     #     image = image[35:195]  # crop
-#     #     image = image[::2, ::2, 0]  # downsample by factor of 2
-#     #     image[image == 144] = 0  # erase background (background type 1)
-#     #     image[image == 109] = 0  # erase background (background type 2)
-#     #     image[image != 0] = 1  # everything else (paddles, ball) just set to 1
-#     #     return np.reshape(image, (1,80,80))
-    
-#     env = gym.make('CartPole-v0')
-#     N = 20
-#     batch_size = 5
-#     n_epochs = 4
-#     alpha = 0.0003
-#     # raw_image = env.reset()
-#     # preprocessed_image = prepro(raw_image) #(1, 80, 80)
-#     # flattened = preprocessed_image.flatten()
-#     agent = Agent(num_actions=env.action_space.n, batch_size=batch_size, 
-#                     alpha=alpha, num_epochs=n_epochs, 
-#                     input_dims=env.observation_space.shape) # does work on more advanced environments but requires more fine-tuning
-#     n_games = 300
-
-#     figure_file = 'plots/Pong.png'
-
-#     best_score = env.reward_range[0]
-#     score_history = []
-
-#     learn_iters = 0
-#     avg_score = 0
-#     n_steps = 0
-
-#     for i in range(n_games):
-#         observation = env.reset()
-#         # observation = prepro(observation)
-#         done = False
-#         score = 0
-#         while not done:
-#             action, prob, val = agent.choose_action(observation)
-#             observation_, reward, done, info = env.step(action)
-#             n_steps += 1
-#             score += reward
-#             agent.remember(observation, action, prob, val, reward, done)
-#             if n_steps % N == 0: # if true, it's time to perform learning function
-#                 agent.learn()
-#                 learn_iters += 1
-#             observation = observation_
-#         score_history.append(score)
-#         avg_score = np.mean(score_history[-100:])
-
-#         if avg_score > best_score: # if best score found
-#             best_score = avg_score
-#             agent.save_models()
-
-#         print('episode', i, 'score %.1f' % score, 'avg score %.1f' % avg_score,
-#                 'time_steps', n_steps, 'learning_steps', learn_iters)
-#     x = [i+1 for i in range(len(score_history))]
-#     # print("Final Score: ", score_history[-1])
-    
-#     plot_learning_curve(x, score_history, figure_file, "Training Episodes", "Average Scores")
-
+    plot_learning_curve(x, score_history, figure_file,
+                        "Training Episodes", "Average Scores", "Breakout")
