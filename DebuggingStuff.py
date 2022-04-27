@@ -55,17 +55,21 @@ class ActorNetwork(nn.Module):
         super(ActorNetwork, self).__init__()
 
         self.checkpoint_file = os.path.join(chkpt_dir, 'actor_torch_ppo_Breakout_conv')
-        self.actor = nn.Sequential(
-                nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4), # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
-                nn.ReLU(),
-                nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2), # 19 x 19 becomes 9 x 9
-                nn.ReLU(),
-                nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1), # 9 x 9 becomes 7 x 7
-                nn.ReLU(),
-                nn.Linear(in_features = 7 * 7 * 64, out_features=512),
-                nn.Softmax(dim=-1)
-        )
-        print("Finished running actor")
+        self.conv1 = nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4) # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
+        self.conv2 = nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2) # 19 x 19 becomes 9 x 9
+        self.conv3 = nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1) # 9 x 9 becomes 7 x 7
+        self.linear = nn.Linear(in_features = 7 * 7 * 64, out_features=1) # don't know if out_features should be 1
+        
+        # self.actor = nn.Sequential(
+        #         nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4), # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
+        #         nn.ReLU(),
+        #         nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2), # 19 x 19 becomes 9 x 9
+        #         nn.ReLU(),
+        #         nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1), # 9 x 9 becomes 7 x 7
+        #         nn.ReLU(),
+        #         nn.Linear(in_features = 7 * 7 * 64, out_features=512),
+        #         nn.Softmax(dim=-1)
+        # )
         # self.actor = nn.Sequential(
         #         nn.Linear(*input_dims, fc1_dims), # Need to manually pass in input
         #         nn.ReLU(),
@@ -81,8 +85,11 @@ class ActorNetwork(nn.Module):
         self.to(self.device)
 
     def forward(self, state):
-        print("Works forward actornetwork")
-        dist = self.actor(state)
+        # dist = self.actor(state)
+        dist = F.relu(self.conv1(state)) # don't know if it should take in state
+        dist = F.relu(self.conv2(dist))
+        dist = F.relu(self.conv3(dist))
+        dist = dist.reshape((-1, 7*7*64)) # before going to linear layer
         dist = Categorical(dist)
         # Calculating series of probabilities that we will use to get our actual actions
         # We can use that to get the log probabilities for the calculation of the ratio, for the two probabilities of our learning function
@@ -101,16 +108,20 @@ class CriticNetwork(nn.Module):
         super(CriticNetwork, self).__init__()
 
         self.checkpoint_file = os.path.join(chkpt_dir, 'critic_torch_ppo_Breakout_conv')
-        self.critic = nn.Sequential(
-                nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4), # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
-                nn.ReLU(),
-                nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2), # 19 x 19 becomes 9 x 9
-                nn.ReLU(),
-                nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1), # 9 x 9 becomes 7 x 7
-                nn.ReLU(),
-                nn.Linear(in_features = 7 * 7 * 64, out_features=1) # don't know if out_features should be 1
-        )
-        print("Finished running critic")
+        self.conv1 = nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4) # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
+        self.conv2 = nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2) # 19 x 19 becomes 9 x 9
+        self.conv3 = nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1) # 9 x 9 becomes 7 x 7
+        self.linear = nn.Linear(in_features = 7 * 7 * 64, out_features=1) # don't know if out_features should be 1
+
+        # self.critic = nn.Sequential(
+        #         nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4), # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
+        #         nn.ReLU(),
+        #         nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2), # 19 x 19 becomes 9 x 9
+        #         nn.ReLU(),
+        #         nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1), # 9 x 9 becomes 7 x 7
+        #         nn.ReLU(),
+        #         nn.Linear(in_features = 7 * 7 * 64, out_features=1) # don't know if out_features should be 1
+        # )
         # self.critic = nn.Sequential(
         #         nn.Linear(*input_dims, fc1_dims), # Need to manually pass in inputs
         #         nn.ReLU(),
@@ -125,8 +136,12 @@ class CriticNetwork(nn.Module):
         self.to(self.device)
 
     def forward(self, state):
-        value = self.critic(state)
-        print("Works forward criticnetwork")
+        value = F.relu(self.conv1(state)) # don't know if it should take in state
+        value = F.relu(self.conv2(value))
+        value = F.relu(self.conv3(value))
+        value = value.reshape((-1, 7*7*64)) # before going to linear layer
+        value = F.relu(self.linear(value))
+        # value = self.critic(state)
         # value = value.reshape((-1, 7 * 7 * 64))
 
         return value
@@ -173,7 +188,7 @@ class Agent:
 
         probs = T.squeeze(dist.log_prob(action)).item()
         action = T.squeeze(action).item()
-        value = T.squeeze(value).item()
+        value = T.squeeze(value).item() # don't need .item() anymore?
 
         return action, probs, value
 
@@ -198,7 +213,6 @@ class Agent:
             values = T.tensor(values).to(self.actor.device)
             for batch in batches:
                 states = T.tensor(state_arr[batch].reshape(1, 3136), dtype=T.float).to(self.actor.device)
-                print("Finished running states")
                 old_probs = T.tensor(old_probs_arr[batch]).to(self.actor.device)
                 actions = T.tensor(action_arr[batch]).to(self.actor.device)
                 # we have the bottom of the numerator now(pi old)
