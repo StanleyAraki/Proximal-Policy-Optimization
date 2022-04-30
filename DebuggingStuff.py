@@ -58,7 +58,8 @@ class ActorNetwork(nn.Module):
         self.conv1 = nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4) # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
         self.conv2 = nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2) # 19 x 19 becomes 9 x 9
         self.conv3 = nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1) # 9 x 9 becomes 7 x 7
-        self.linear = nn.Linear(in_features = 7 * 7 * 64, out_features=1) # don't know if out_features should be 1
+        self.linear = nn.Linear(in_features = 7 * 7 * 64, out_features=512) # don't know if out_features should be 1
+        self.pi_logits = nn.Linear(in_features=512, out_features=n_actions)
         
         # self.actor = nn.Sequential(
         #         nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4), # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
@@ -90,7 +91,8 @@ class ActorNetwork(nn.Module):
         dist = F.relu(self.conv2(dist))
         dist = F.relu(self.conv3(dist))
         dist = dist.reshape((-1, 7*7*64)) # before going to linear layer
-        dist = Categorical(dist)
+        dist = F.relu(self.linear(dist))
+        dist = Categorical(logits=self.pi_logits(dist)) # might want to add a softmax instead?
         # Calculating series of probabilities that we will use to get our actual actions
         # We can use that to get the log probabilities for the calculation of the ratio, for the two probabilities of our learning function
 
@@ -212,10 +214,11 @@ class Agent:
 
             values = T.tensor(values).to(self.actor.device)
             for batch in batches:
-                states = T.tensor(state_arr[batch].reshape(1, 3136), dtype=T.float).to(self.actor.device)
+                states = T.tensor(state_arr[batch], dtype=T.float).to(self.actor.device)
                 old_probs = T.tensor(old_probs_arr[batch]).to(self.actor.device)
                 actions = T.tensor(action_arr[batch]).to(self.actor.device)
                 # we have the bottom of the numerator now(pi old)
+                states = states[:, None, :, :] # permute to (5, 1, 80, 80)
 
                 # we now need pi new
                 dist = self.actor(states)
@@ -254,7 +257,7 @@ if __name__ == '__main__':
     N = 20
     batch_size = 5
     n_epochs = 4
-    alpha = 0.0003
+    alpha = 0.0003 # learning rate / epsilon value I think
 
     raw_image = env.reset()
     preprocessed_image = prepro(raw_image)  # (1, 80, 80)
@@ -262,7 +265,7 @@ if __name__ == '__main__':
     flattened = preprocessed_image.flatten()
     agent = Agent(num_actions=env.action_space.n, batch_size=5,
                   alpha=0.0003, num_epochs=4, input_dims=preprocessed_image.shape)
-    n_games = 5  # 45 mins for 100 iterations of training
+    n_games = 15  # 45 mins for 100 iterations of training
 
     figure_file = 'plots/Breakout_Conv.png'
 
