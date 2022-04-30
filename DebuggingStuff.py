@@ -60,25 +60,6 @@ class ActorNetwork(nn.Module):
         self.conv3 = nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1) # 9 x 9 becomes 7 x 7
         self.linear = nn.Linear(in_features = 7 * 7 * 64, out_features=512) # don't know if out_features should be 1
         self.pi_logits = nn.Linear(in_features=512, out_features=n_actions)
-        
-        # self.actor = nn.Sequential(
-        #         nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4), # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
-        #         nn.ReLU(),
-        #         nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2), # 19 x 19 becomes 9 x 9
-        #         nn.ReLU(),
-        #         nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1), # 9 x 9 becomes 7 x 7
-        #         nn.ReLU(),
-        #         nn.Linear(in_features = 7 * 7 * 64, out_features=512),
-        #         nn.Softmax(dim=-1)
-        # )
-        # self.actor = nn.Sequential(
-        #         nn.Linear(*input_dims, fc1_dims), # Need to manually pass in input
-        #         nn.ReLU(),
-        #         nn.Linear(fc1_dims, fc2_dims),
-        #         nn.ReLU(),
-        #         nn.Linear(fc2_dims, n_actions),
-        #         nn.Softmax(dim=-1) # SoftMax takes care of the fact that we're dealing with probabilities and they sum to 1
-        # )
 
         self.optimizer = optim.Adam(self.parameters(), lr=alpha)
         # self.device = T.device('cuda:0' if T.cuda.is_available() else 'cpu')
@@ -115,23 +96,6 @@ class CriticNetwork(nn.Module):
         self.conv3 = nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1) # 9 x 9 becomes 7 x 7
         self.linear = nn.Linear(in_features = 7 * 7 * 64, out_features=1) # don't know if out_features should be 1
 
-        # self.critic = nn.Sequential(
-        #         nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size=8, stride=4), # in_channels = 1 b/c grayscale. 80 x 80 becomes 19 x 19
-        #         nn.ReLU(),
-        #         nn.Conv2d(in_channels = 32, out_channels= 64, kernel_size = 3, stride = 2), # 19 x 19 becomes 9 x 9
-        #         nn.ReLU(),
-        #         nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = 3, stride = 1), # 9 x 9 becomes 7 x 7
-        #         nn.ReLU(),
-        #         nn.Linear(in_features = 7 * 7 * 64, out_features=1) # don't know if out_features should be 1
-        # )
-        # self.critic = nn.Sequential(
-        #         nn.Linear(*input_dims, fc1_dims), # Need to manually pass in inputs
-        #         nn.ReLU(),
-        #         nn.Linear(fc1_dims, fc2_dims),
-        #         nn.ReLU(),
-        #         nn.Linear(fc2_dims, 1)
-        # ) # handles batch size automatically
-
         self.optimizer = optim.Adam(self.parameters(), lr=alpha)
         # self.device = T.device('cuda:0' xif T.cuda.is_available() else 'cpu')
         self.device = T.device('cpu')
@@ -143,8 +107,6 @@ class CriticNetwork(nn.Module):
         value = F.relu(self.conv3(value))
         value = value.reshape((-1, 7*7*64)) # before going to linear layer
         value = F.relu(self.linear(value))
-        # value = self.critic(state)
-        # value = value.reshape((-1, 7 * 7 * 64))
 
         return value
 
@@ -180,12 +142,13 @@ class Agent:
     
     def choose_action(self, observation):
         # handle choosing an action that takes an observation of the current state of the environment, converts to torch tensor
-        # state = T.tensor([observation.flatten()], dtype=T.float) # Need to flatten the observation from (1, 80, 80) to (1, 6400)
         state = T.tensor([observation], dtype=T.float) # changed from [observation] to observation
         state = state.to(self.actor.device)
 
-        dist = self.actor(state)
-        value = self.critic(state)
+        # dist = self.actor(state)
+        dist = self.actor.forward(state)
+        # value = self.critic(state)
+        value = self.critic.forward(state)
         action = dist.sample()
 
         probs = T.squeeze(dist.log_prob(action)).item()
@@ -221,8 +184,10 @@ class Agent:
                 states = states[:, None, :, :] # permute to (5, 1, 80, 80)
 
                 # we now need pi new
-                dist = self.actor(states)
-                critic_value = self.critic(states)
+                # dist = self.actor(states)
+                dist = self.actor.forward(states)
+                # critic_value = self.critic(states)
+                critic_value = self.critic.forward(states)
                 critic_value = T.squeeze(critic_value)
 
                 new_probs = dist.log_prob(actions)
@@ -253,19 +218,20 @@ def prepro(image):
     return np.reshape(image, (80, 80))
 
 if __name__ == '__main__':
-    env = gym.make('BreakoutDeterministic-v4')
+    # env = gym.make('BreakoutDeterministic-v4', render_mode = 'human')
+    env = gym.make("BreakoutNoFrameskip-v4")
     N = 20
     batch_size = 5
     n_epochs = 4
-    alpha = 0.0003 # learning rate / epsilon value I think
+    alpha = 0.00025 # learning rate / epsilon value I think
 
     raw_image = env.reset()
     preprocessed_image = prepro(raw_image)  # (1, 80, 80)
 
     flattened = preprocessed_image.flatten()
-    agent = Agent(num_actions=env.action_space.n, batch_size=5,
-                  alpha=0.0003, num_epochs=4, input_dims=preprocessed_image.shape)
-    n_games = 15  # 45 mins for 100 iterations of training
+    agent = Agent(num_actions=env.action_space.n, batch_size=batch_size,
+                  alpha=alpha, num_epochs=n_epochs, input_dims=preprocessed_image.shape)
+    n_games = 15  # 45 mins for 100 iterations of training 
 
     figure_file = 'plots/Breakout_Conv.png'
 
@@ -277,7 +243,7 @@ if __name__ == '__main__':
     n_steps = 0
 
     # Load model
-    # agent.load_models()
+    agent.load_models()
 
     for i in range(n_games):
         observation = env.reset()
@@ -286,9 +252,13 @@ if __name__ == '__main__':
         while not done:
             observation = prepro(observation)  # need to preprocess each time
             action, prob, val = agent.choose_action(observation)
+            print(action)
+            # if action == 2 or action == 3:
+            #     print(action)
             observation_, reward, done, info = env.step(action)
             n_steps += 1
             score += reward
+            # observation = prepro(observation)
             agent.remember(observation, action, prob, val, reward, done)
             if n_steps % N == 0:  # if true, it's time to perform learning function
                 agent.learn()
