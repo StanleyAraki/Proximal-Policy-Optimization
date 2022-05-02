@@ -153,7 +153,7 @@ class Agent:
 
         probs = T.squeeze(dist.log_prob(action)).item()
         action = T.squeeze(action).item()
-        value = T.squeeze(value).item() # don't need .item() anymore?
+        value = T.squeeze(value).item()
 
         return action, probs, value
 
@@ -218,8 +218,8 @@ def prepro(image):
     return np.reshape(image, (80, 80))
 
 if __name__ == '__main__':
-    # env = gym.make('BreakoutDeterministic-v4', render_mode = 'human')
-    env = gym.make("BreakoutNoFrameskip-v4")
+    env = gym.make('BreakoutDeterministic-v4', render_mode = 'human')
+    # env = gym.make("BreakoutNoFrameskip-v4", render_mode='human')
     N = 20
     batch_size = 5
     n_epochs = 4
@@ -231,7 +231,7 @@ if __name__ == '__main__':
     flattened = preprocessed_image.flatten()
     agent = Agent(num_actions=env.action_space.n, batch_size=batch_size,
                   alpha=alpha, num_epochs=n_epochs, input_dims=preprocessed_image.shape)
-    n_games = 15  # 45 mins for 100 iterations of training 
+    n_games = 5  # 45 mins for 100 iterations of training 
 
     figure_file = 'plots/Breakout_Conv.png'
 
@@ -241,6 +241,7 @@ if __name__ == '__main__':
     learn_iters = 0
     avg_score = 0
     n_steps = 0
+    prev_steps = 0
 
     # Load model
     agent.load_models()
@@ -249,10 +250,24 @@ if __name__ == '__main__':
         observation = env.reset()
         done = False
         score = 0
+        
+        # This prevents the game from stalling on the first step. Might stall later but...
+        # At the start of every game, fire the ball
+        observation = prepro(observation)
+        # action, prob, val = agent.choose_action(observation)
+        prob = -0.2 # around 45%
+        val = 0.0
+        observation_, reward, done, info = env.step(1)
+        n_steps += 1
+        score += reward 
+        agent.remember(observation, 1, prob, val, reward, done) # dunno if it should be observation_ or observation
+        
         while not done:
-            observation = prepro(observation)  # need to preprocess each time
+            # observation = prepro(observation)  # need to preprocess each time
             action, prob, val = agent.choose_action(observation)
-            print(action)
+            print("action: ", action)
+            print("probability: ", prob)
+            print("val: ", val)
             # if action == 2 or action == 3:
             #     print(action)
             observation_, reward, done, info = env.step(action)
@@ -264,6 +279,7 @@ if __name__ == '__main__':
                 agent.learn()
                 learn_iters += 1
             observation = observation_
+            observation = prepro(observation)
         score_history.append(score)
         avg_score = np.mean(score_history[-100:])
 
