@@ -62,6 +62,7 @@ class ActorNetwork(nn.Module):
         self.pi_logits = nn.Linear(in_features=512, out_features=n_actions)
 
         self.optimizer = optim.Adam(self.parameters(), lr=alpha)
+        self.soft = nn.Softmax(dim=-1)
         # self.device = T.device('cuda:0' if T.cuda.is_available() else 'cpu')
         self.device = T.device('cpu')
         self.to(self.device)
@@ -73,10 +74,14 @@ class ActorNetwork(nn.Module):
         dist = F.relu(self.conv3(dist))
         dist = dist.reshape((-1, 7*7*64)) # before going to linear layer
         dist = F.relu(self.linear(dist))
+        dist = self.soft(dist)
         dist = Categorical(logits=self.pi_logits(dist)) # might want to add a softmax instead?
+        # consider softmax
         # Calculating series of probabilities that we will use to get our actual actions
         # We can use that to get the log probabilities for the calculation of the ratio, for the two probabilities of our learning function
 
+# use normalization, don't want one that is very high, want similar to eachother\
+# add normalization layers. Every two concolutions, normalize
         return dist
 
     def save_checkpoint(self):
