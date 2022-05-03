@@ -71,9 +71,11 @@ class ActorNetwork(nn.Module):
         # dist = self.actor(state)
         dist = F.relu(self.conv1(state)) # don't know if it should take in state
         dist = F.relu(self.conv2(dist))
+        dist = F.normalize(dist)
         dist = F.relu(self.conv3(dist))
         dist = dist.reshape((-1, 7*7*64)) # before going to linear layer
         dist = F.relu(self.linear(dist))
+        dist = F.normalize(dist)
         dist = self.soft(dist)
         dist = Categorical(logits=self.pi_logits(dist)) # might want to add a softmax instead?
         # consider softmax
@@ -109,8 +111,10 @@ class CriticNetwork(nn.Module):
     def forward(self, state):
         value = F.relu(self.conv1(state)) # don't know if it should take in state
         value = F.relu(self.conv2(value))
+        value = F.normalize(value)
         value = F.relu(self.conv3(value))
         value = value.reshape((-1, 7*7*64)) # before going to linear layer
+        value = F.normalize(value)
         value = F.relu(self.linear(value))
 
         return value
@@ -228,7 +232,7 @@ if __name__ == '__main__':
     N = 20
     batch_size = 5
     n_epochs = 4
-    alpha = 0.00025 # learning rate / epsilon value I think
+    alpha = 0.00025 
 
     raw_image = env.reset()
     preprocessed_image = prepro(raw_image)  # (1, 80, 80)
@@ -236,7 +240,7 @@ if __name__ == '__main__':
     flattened = preprocessed_image.flatten()
     agent = Agent(num_actions=env.action_space.n, batch_size=batch_size,
                   alpha=alpha, num_epochs=n_epochs, input_dims=preprocessed_image.shape)
-    n_games = 500  # 2100 training iterations now
+    n_games = 100  # 2200 training iterations now
 
     figure_file = 'plots/Breakout_Conv.png'
 
@@ -249,23 +253,14 @@ if __name__ == '__main__':
     prev_steps = 0
 
     # Load model
-    agent.load_models()
+    agent.load_models() # check if loading correct one
+
+    steps = 10 # model only updates after first 10 iterations after load to ensure learning
 
     for i in range(n_games):
         observation = env.reset()
         done = False
         score = 0
-        
-        # # This prevents the game from stalling on the first step. Might stall later but...
-        # # At the start of every game, fire the ball
-        # observation = prepro(observation)
-        # # action, prob, val = agent.choose_action(observation)
-        # prob = -0.2 # around 45%
-        # val = 0.0
-        # observation_, reward, done, info = env.step(1)
-        # n_steps += 1
-        # score += reward 
-        # agent.remember(observation, 1, prob, val, reward, done) # dunno if it should be observation_ or observation
         
         while not done:
             observation = prepro(observation)  # need to preprocess each time
@@ -288,7 +283,7 @@ if __name__ == '__main__':
         score_history.append(score)
         avg_score = np.mean(score_history[-100:])
 
-        if avg_score > best_score:  # if best score found
+        if avg_score > best_score and i > steps:  # if best score found
             best_score = avg_score
             agent.save_models()
 
