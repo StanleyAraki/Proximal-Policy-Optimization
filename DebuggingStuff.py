@@ -236,7 +236,7 @@ if __name__ == '__main__':
     flattened = preprocessed_image.flatten()
     agent = Agent(num_actions=env.action_space.n, batch_size=batch_size,
                   alpha=alpha, num_epochs=n_epochs, input_dims=preprocessed_image.shape)
-    n_games = 100  # 45 mins for 100 iterations of training 
+    n_games = 500  # 2100 training iterations now
 
     figure_file = 'plots/Breakout_Conv.png'
 
