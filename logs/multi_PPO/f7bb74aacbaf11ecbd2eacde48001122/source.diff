@@ -1,0 +1,5551 @@
+diff --git a/logs/multi_PPO/027a951acb9711ec917eacde48001122/indicators.yaml b/logs/multi_PPO/027a951acb9711ec917eacde48001122/indicators.yaml
+deleted file mode 100644
+index 8693c82..0000000
+--- a/logs/multi_PPO/027a951acb9711ec917eacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,70 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/027a951acb9711ec917eacde48001122/pids/0.pid b/logs/multi_PPO/027a951acb9711ec917eacde48001122/pids/0.pid
+deleted file mode 100644
+index 553401a..0000000
+--- a/logs/multi_PPO/027a951acb9711ec917eacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-43638
+\ No newline at end of file
+diff --git a/logs/multi_PPO/027a951acb9711ec917eacde48001122/run.yaml b/logs/multi_PPO/027a951acb9711ec917eacde48001122/run.yaml
+deleted file mode 100644
+index cc0b010..0000000
+--- a/logs/multi_PPO/027a951acb9711ec917eacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 06:43:18
+-uuid: 027a951acb9711ec917eacde48001122
+diff --git a/logs/multi_PPO/027a951acb9711ec917eacde48001122/source.diff b/logs/multi_PPO/027a951acb9711ec917eacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/027a951acb9711ec917eacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/027a951acb9711ec917eacde48001122/sqlite.db b/logs/multi_PPO/027a951acb9711ec917eacde48001122/sqlite.db
+deleted file mode 100644
+index a6aee07..0000000
+Binary files a/logs/multi_PPO/027a951acb9711ec917eacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/027a951acb9711ec917eacde48001122/tensorboard/events.out.tfevents.1651661030.1x-nat-vl930-172-30-89-63.wireless.umass.edu.43638.0 b/logs/multi_PPO/027a951acb9711ec917eacde48001122/tensorboard/events.out.tfevents.1651661030.1x-nat-vl930-172-30-89-63.wireless.umass.edu.43638.0
+deleted file mode 100644
+index 495c4be..0000000
+Binary files a/logs/multi_PPO/027a951acb9711ec917eacde48001122/tensorboard/events.out.tfevents.1651661030.1x-nat-vl930-172-30-89-63.wireless.umass.edu.43638.0 and /dev/null differ
+diff --git a/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/indicators.yaml b/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/pids/0.pid b/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/pids/0.pid
+deleted file mode 100644
+index 6adb91e..0000000
+--- a/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-36636
+\ No newline at end of file
+diff --git a/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/run.yaml b/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/run.yaml
+deleted file mode 100644
+index fc7e44d..0000000
+--- a/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 02:32:48
+-uuid: 0424c0e8cb7411eca74bacde48001122
+diff --git a/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/source.diff b/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/0424c0e8cb7411eca74bacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/indicators.yaml b/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/pids/0.pid b/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/pids/0.pid
+deleted file mode 100644
+index ba9ea2d..0000000
+--- a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-40253
+\ No newline at end of file
+diff --git a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/run.yaml b/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/run.yaml
+deleted file mode 100644
+index 452fbbe..0000000
+--- a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 05:03:09
+-uuid: 04e656d0cb8911ecb8e8acde48001122
+diff --git a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/source.diff b/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/sqlite.db b/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/sqlite.db
+deleted file mode 100644
+index 26c7574..0000000
+Binary files a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/tensorboard/events.out.tfevents.1651655374.1x-nat-vl930-172-30-89-63.wireless.umass.edu.40253.0 b/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/tensorboard/events.out.tfevents.1651655374.1x-nat-vl930-172-30-89-63.wireless.umass.edu.40253.0
+deleted file mode 100644
+index 67ba64c..0000000
+Binary files a/logs/multi_PPO/04e656d0cb8911ecb8e8acde48001122/tensorboard/events.out.tfevents.1651655374.1x-nat-vl930-172-30-89-63.wireless.umass.edu.40253.0 and /dev/null differ
+diff --git a/logs/multi_PPO/06ea89dacba511ecad93acde48001122/indicators.yaml b/logs/multi_PPO/06ea89dacba511ecad93acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/06ea89dacba511ecad93acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/06ea89dacba511ecad93acde48001122/pids/0.pid b/logs/multi_PPO/06ea89dacba511ecad93acde48001122/pids/0.pid
+deleted file mode 100644
+index 20d664a..0000000
+--- a/logs/multi_PPO/06ea89dacba511ecad93acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-48602
+\ No newline at end of file
+diff --git a/logs/multi_PPO/06ea89dacba511ecad93acde48001122/run.yaml b/logs/multi_PPO/06ea89dacba511ecad93acde48001122/run.yaml
+deleted file mode 100644
+index fcc980c..0000000
+--- a/logs/multi_PPO/06ea89dacba511ecad93acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 08:23:39
+-uuid: 06ea89dacba511ecad93acde48001122
+diff --git a/logs/multi_PPO/06ea89dacba511ecad93acde48001122/source.diff b/logs/multi_PPO/06ea89dacba511ecad93acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/06ea89dacba511ecad93acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/09c04906cb9611eca440acde48001122/indicators.yaml b/logs/multi_PPO/09c04906cb9611eca440acde48001122/indicators.yaml
+deleted file mode 100644
+index 8693c82..0000000
+--- a/logs/multi_PPO/09c04906cb9611eca440acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,70 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/09c04906cb9611eca440acde48001122/pids/0.pid b/logs/multi_PPO/09c04906cb9611eca440acde48001122/pids/0.pid
+deleted file mode 100644
+index 88f63a5..0000000
+--- a/logs/multi_PPO/09c04906cb9611eca440acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-42412
+\ No newline at end of file
+diff --git a/logs/multi_PPO/09c04906cb9611eca440acde48001122/run.yaml b/logs/multi_PPO/09c04906cb9611eca440acde48001122/run.yaml
+deleted file mode 100644
+index 68f7cac..0000000
+--- a/logs/multi_PPO/09c04906cb9611eca440acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 06:36:21
+-uuid: 09c04906cb9611eca440acde48001122
+diff --git a/logs/multi_PPO/09c04906cb9611eca440acde48001122/source.diff b/logs/multi_PPO/09c04906cb9611eca440acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/09c04906cb9611eca440acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/09c04906cb9611eca440acde48001122/sqlite.db b/logs/multi_PPO/09c04906cb9611eca440acde48001122/sqlite.db
+deleted file mode 100644
+index ad75d36..0000000
+Binary files a/logs/multi_PPO/09c04906cb9611eca440acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/09c04906cb9611eca440acde48001122/tensorboard/events.out.tfevents.1651660634.1x-nat-vl930-172-30-89-63.wireless.umass.edu.42412.0 b/logs/multi_PPO/09c04906cb9611eca440acde48001122/tensorboard/events.out.tfevents.1651660634.1x-nat-vl930-172-30-89-63.wireless.umass.edu.42412.0
+deleted file mode 100644
+index 8796fe0..0000000
+Binary files a/logs/multi_PPO/09c04906cb9611eca440acde48001122/tensorboard/events.out.tfevents.1651660634.1x-nat-vl930-172-30-89-63.wireless.umass.edu.42412.0 and /dev/null differ
+diff --git a/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/indicators.yaml b/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/pids/0.pid b/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/pids/0.pid
+deleted file mode 100644
+index 05fff78..0000000
+--- a/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-47790
+\ No newline at end of file
+diff --git a/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/run.yaml b/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/run.yaml
+deleted file mode 100644
+index adfe40a..0000000
+--- a/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 08:09:33
+-uuid: 0ef28bd4cba311ecb909acde48001122
+diff --git a/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/source.diff b/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/0ef28bd4cba311ecb909acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/indicators.yaml b/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/pids/0.pid b/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/pids/0.pid
+deleted file mode 100644
+index b5ce422..0000000
+--- a/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-36701
+\ No newline at end of file
+diff --git a/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/run.yaml b/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/run.yaml
+deleted file mode 100644
+index 6856baf..0000000
+--- a/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 02:33:25
+-uuid: 19bb5cd2cb7411ec9401acde48001122
+diff --git a/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/source.diff b/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/19bb5cd2cb7411ec9401acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/indicators.yaml b/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/pids/0.pid b/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/pids/0.pid
+deleted file mode 100644
+index 4d2aebf..0000000
+--- a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-45640
+\ No newline at end of file
+diff --git a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/run.yaml b/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/run.yaml
+deleted file mode 100644
+index 79d8766..0000000
+--- a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 07:26:59
+-uuid: 1c5b3c04cb9d11ec99f3acde48001122
+diff --git a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/source.diff b/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/sqlite.db b/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/sqlite.db
+deleted file mode 100644
+index fa40a7a..0000000
+Binary files a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/tensorboard/events.out.tfevents.1651663652.1x-nat-vl930-172-30-89-63.wireless.umass.edu.45640.0 b/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/tensorboard/events.out.tfevents.1651663652.1x-nat-vl930-172-30-89-63.wireless.umass.edu.45640.0
+deleted file mode 100644
+index 6d34630..0000000
+Binary files a/logs/multi_PPO/1c5b3c04cb9d11ec99f3acde48001122/tensorboard/events.out.tfevents.1651663652.1x-nat-vl930-172-30-89-63.wireless.umass.edu.45640.0 and /dev/null differ
+diff --git a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/indicators.yaml b/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/pids/0.pid b/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/pids/0.pid
+deleted file mode 100644
+index 941cf9b..0000000
+--- a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-45280
+\ No newline at end of file
+diff --git a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/run.yaml b/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/run.yaml
+deleted file mode 100644
+index 8c83ee6..0000000
+--- a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 07:19:52
+-uuid: 1e025160cb9c11eca4b3acde48001122
+diff --git a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/source.diff b/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/sqlite.db b/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/sqlite.db
+deleted file mode 100644
+index 5b9c792..0000000
+Binary files a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/tensorboard/events.out.tfevents.1651663225.1x-nat-vl930-172-30-89-63.wireless.umass.edu.45280.0 b/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/tensorboard/events.out.tfevents.1651663225.1x-nat-vl930-172-30-89-63.wireless.umass.edu.45280.0
+deleted file mode 100644
+index 4170b31..0000000
+Binary files a/logs/multi_PPO/1e025160cb9c11eca4b3acde48001122/tensorboard/events.out.tfevents.1651663225.1x-nat-vl930-172-30-89-63.wireless.umass.edu.45280.0 and /dev/null differ
+diff --git a/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/indicators.yaml b/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/pids/0.pid b/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/pids/0.pid
+deleted file mode 100644
+index 895d538..0000000
+--- a/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-37206
+\ No newline at end of file
+diff --git a/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/run.yaml b/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/run.yaml
+deleted file mode 100644
+index dd3ee54..0000000
+--- a/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 02:55:10
+-uuid: 23bc4bf8cb7711eca08eacde48001122
+diff --git a/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/source.diff b/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/23bc4bf8cb7711eca08eacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/indicators.yaml b/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/pids/0.pid b/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/pids/0.pid
+deleted file mode 100644
+index 3eb5851..0000000
+--- a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-41433
+\ No newline at end of file
+diff --git a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/run.yaml b/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/run.yaml
+deleted file mode 100644
+index 88283b8..0000000
+--- a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 06:08:32
+-uuid: 26f72bc4cb9211ec8170acde48001122
+diff --git a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/source.diff b/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/sqlite.db b/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/sqlite.db
+deleted file mode 100644
+index 6890a56..0000000
+Binary files a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/tensorboard/events.out.tfevents.1651658931.1x-nat-vl930-172-30-89-63.wireless.umass.edu.41433.0 b/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/tensorboard/events.out.tfevents.1651658931.1x-nat-vl930-172-30-89-63.wireless.umass.edu.41433.0
+deleted file mode 100644
+index 63bc053..0000000
+Binary files a/logs/multi_PPO/26f72bc4cb9211ec8170acde48001122/tensorboard/events.out.tfevents.1651658931.1x-nat-vl930-172-30-89-63.wireless.umass.edu.41433.0 and /dev/null differ
+diff --git a/logs/multi_PPO/354e5792cba611ec80d4acde48001122/indicators.yaml b/logs/multi_PPO/354e5792cba611ec80d4acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/354e5792cba611ec80d4acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/354e5792cba611ec80d4acde48001122/pids/0.pid b/logs/multi_PPO/354e5792cba611ec80d4acde48001122/pids/0.pid
+deleted file mode 100644
+index a5d0a47..0000000
+--- a/logs/multi_PPO/354e5792cba611ec80d4acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-49117
+\ No newline at end of file
+diff --git a/logs/multi_PPO/354e5792cba611ec80d4acde48001122/run.yaml b/logs/multi_PPO/354e5792cba611ec80d4acde48001122/run.yaml
+deleted file mode 100644
+index ea6208e..0000000
+--- a/logs/multi_PPO/354e5792cba611ec80d4acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 08:32:06
+-uuid: 354e5792cba611ec80d4acde48001122
+diff --git a/logs/multi_PPO/354e5792cba611ec80d4acde48001122/source.diff b/logs/multi_PPO/354e5792cba611ec80d4acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/354e5792cba611ec80d4acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/indicators.yaml b/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/pids/0.pid b/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/pids/0.pid
+deleted file mode 100644
+index 478f85b..0000000
+--- a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-47928
+\ No newline at end of file
+diff --git a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/run.yaml b/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/run.yaml
+deleted file mode 100644
+index 7b45bc5..0000000
+--- a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 08:10:38
+-uuid: 358eb268cba311ecb1a5acde48001122
+diff --git a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/source.diff b/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/sqlite.db b/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/sqlite.db
+deleted file mode 100644
+index 43a9a44..0000000
+Binary files a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/tensorboard/events.out.tfevents.1651666272.1x-nat-vl930-172-30-89-63.wireless.umass.edu.47928.0 b/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/tensorboard/events.out.tfevents.1651666272.1x-nat-vl930-172-30-89-63.wireless.umass.edu.47928.0
+deleted file mode 100644
+index a336d3f..0000000
+Binary files a/logs/multi_PPO/358eb268cba311ecb1a5acde48001122/tensorboard/events.out.tfevents.1651666272.1x-nat-vl930-172-30-89-63.wireless.umass.edu.47928.0 and /dev/null differ
+diff --git a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/indicators.yaml b/logs/multi_PPO/36b69162cb9711ec8302acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/pids/0.pid b/logs/multi_PPO/36b69162cb9711ec8302acde48001122/pids/0.pid
+deleted file mode 100644
+index be26d9c..0000000
+--- a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-43777
+\ No newline at end of file
+diff --git a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/run.yaml b/logs/multi_PPO/36b69162cb9711ec8302acde48001122/run.yaml
+deleted file mode 100644
+index fd6fbd4..0000000
+--- a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 06:44:46
+-uuid: 36b69162cb9711ec8302acde48001122
+diff --git a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/source.diff b/logs/multi_PPO/36b69162cb9711ec8302acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/sqlite.db b/logs/multi_PPO/36b69162cb9711ec8302acde48001122/sqlite.db
+deleted file mode 100644
+index 31f65fe..0000000
+Binary files a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/tensorboard/events.out.tfevents.1651661116.1x-nat-vl930-172-30-89-63.wireless.umass.edu.43777.0 b/logs/multi_PPO/36b69162cb9711ec8302acde48001122/tensorboard/events.out.tfevents.1651661116.1x-nat-vl930-172-30-89-63.wireless.umass.edu.43777.0
+deleted file mode 100644
+index cc67c13..0000000
+Binary files a/logs/multi_PPO/36b69162cb9711ec8302acde48001122/tensorboard/events.out.tfevents.1651661116.1x-nat-vl930-172-30-89-63.wireless.umass.edu.43777.0 and /dev/null differ
+diff --git a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/indicators.yaml b/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/pids/0.pid b/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/pids/0.pid
+deleted file mode 100644
+index 4bcd16c..0000000
+--- a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-41066
+\ No newline at end of file
+diff --git a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/run.yaml b/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/run.yaml
+deleted file mode 100644
+index 49e3fd1..0000000
+--- a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 05:54:54
+-uuid: 3f929d0acb9011ecbe5bacde48001122
+diff --git a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/source.diff b/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/sqlite.db b/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/sqlite.db
+deleted file mode 100644
+index b004acf..0000000
+Binary files a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/tensorboard/events.out.tfevents.1651658115.1x-nat-vl930-172-30-89-63.wireless.umass.edu.41066.0 b/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/tensorboard/events.out.tfevents.1651658115.1x-nat-vl930-172-30-89-63.wireless.umass.edu.41066.0
+deleted file mode 100644
+index 62ac8db..0000000
+Binary files a/logs/multi_PPO/3f929d0acb9011ecbe5bacde48001122/tensorboard/events.out.tfevents.1651658115.1x-nat-vl930-172-30-89-63.wireless.umass.edu.41066.0 and /dev/null differ
+diff --git a/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/indicators.yaml b/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/pids/0.pid b/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/pids/0.pid
+deleted file mode 100644
+index 754e061..0000000
+--- a/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-37292
+\ No newline at end of file
+diff --git a/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/run.yaml b/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/run.yaml
+deleted file mode 100644
+index d9a4533..0000000
+--- a/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 02:56:15
+-uuid: 4a962546cb7711ecbb90acde48001122
+diff --git a/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/source.diff b/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/4a962546cb7711ecbb90acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/indicators.yaml b/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/pids/0.pid b/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/pids/0.pid
+deleted file mode 100644
+index 7dfde04..0000000
+--- a/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-47075
+\ No newline at end of file
+diff --git a/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/run.yaml b/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/run.yaml
+deleted file mode 100644
+index 8d9cd9d..0000000
+--- a/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 07:56:58
+-uuid: 4ce89a02cba111ecba3aacde48001122
+diff --git a/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/source.diff b/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/4ce89a02cba111ecba3aacde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/indicators.yaml b/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/pids/0.pid b/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/pids/0.pid
+deleted file mode 100644
+index bcccf8b..0000000
+--- a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-46246
+\ No newline at end of file
+diff --git a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/run.yaml b/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/run.yaml
+deleted file mode 100644
+index f4a9622..0000000
+--- a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 07:42:55
+-uuid: 569a879ccb9f11ecb0a7acde48001122
+diff --git a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/source.diff b/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/sqlite.db b/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/sqlite.db
+deleted file mode 100644
+index 12a22c6..0000000
+Binary files a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/tensorboard/events.out.tfevents.1651664610.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46246.0 b/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/tensorboard/events.out.tfevents.1651664610.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46246.0
+deleted file mode 100644
+index 314f1ca..0000000
+Binary files a/logs/multi_PPO/569a879ccb9f11ecb0a7acde48001122/tensorboard/events.out.tfevents.1651664610.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46246.0 and /dev/null differ
+diff --git a/logs/multi_PPO/63972104cb9911ecb906acde48001122/indicators.yaml b/logs/multi_PPO/63972104cb9911ecb906acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/63972104cb9911ecb906acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/63972104cb9911ecb906acde48001122/pids/0.pid b/logs/multi_PPO/63972104cb9911ecb906acde48001122/pids/0.pid
+deleted file mode 100644
+index c58ea9b..0000000
+--- a/logs/multi_PPO/63972104cb9911ecb906acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-44452
+\ No newline at end of file
+diff --git a/logs/multi_PPO/63972104cb9911ecb906acde48001122/run.yaml b/logs/multi_PPO/63972104cb9911ecb906acde48001122/run.yaml
+deleted file mode 100644
+index a85aaa4..0000000
+--- a/logs/multi_PPO/63972104cb9911ecb906acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 07:00:20
+-uuid: 63972104cb9911ecb906acde48001122
+diff --git a/logs/multi_PPO/63972104cb9911ecb906acde48001122/source.diff b/logs/multi_PPO/63972104cb9911ecb906acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/63972104cb9911ecb906acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/63972104cb9911ecb906acde48001122/sqlite.db b/logs/multi_PPO/63972104cb9911ecb906acde48001122/sqlite.db
+deleted file mode 100644
+index 67b9293..0000000
+Binary files a/logs/multi_PPO/63972104cb9911ecb906acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/63972104cb9911ecb906acde48001122/tensorboard/events.out.tfevents.1651662058.1x-nat-vl930-172-30-89-63.wireless.umass.edu.44452.0 b/logs/multi_PPO/63972104cb9911ecb906acde48001122/tensorboard/events.out.tfevents.1651662058.1x-nat-vl930-172-30-89-63.wireless.umass.edu.44452.0
+deleted file mode 100644
+index d342c84..0000000
+Binary files a/logs/multi_PPO/63972104cb9911ecb906acde48001122/tensorboard/events.out.tfevents.1651662058.1x-nat-vl930-172-30-89-63.wireless.umass.edu.44452.0 and /dev/null differ
+diff --git a/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/indicators.yaml b/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/pids/0.pid b/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/pids/0.pid
+deleted file mode 100644
+index ccf78f5..0000000
+--- a/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-40053
+\ No newline at end of file
+diff --git a/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/run.yaml b/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/run.yaml
+deleted file mode 100644
+index 592be06..0000000
+--- a/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 04:37:37
+-uuid: 73a07d02cb8511ec8765acde48001122
+diff --git a/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/source.diff b/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/73a07d02cb8511ec8765acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/indicators.yaml b/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/pids/0.pid b/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/pids/0.pid
+deleted file mode 100644
+index e81e3e6..0000000
+--- a/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-37029
+\ No newline at end of file
+diff --git a/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/run.yaml b/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/run.yaml
+deleted file mode 100644
+index e689bf7..0000000
+--- a/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 02:50:30
+-uuid: 7cd05960cb7611ecab4eacde48001122
+diff --git a/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/source.diff b/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/7cd05960cb7611ecab4eacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/indicators.yaml b/logs/multi_PPO/7d424514cba011eca2d8acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/pids/0.pid b/logs/multi_PPO/7d424514cba011eca2d8acde48001122/pids/0.pid
+deleted file mode 100644
+index 7519b1f..0000000
+--- a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-46725
+\ No newline at end of file
+diff --git a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/run.yaml b/logs/multi_PPO/7d424514cba011eca2d8acde48001122/run.yaml
+deleted file mode 100644
+index e22bac9..0000000
+--- a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 07:51:09
+-uuid: 7d424514cba011eca2d8acde48001122
+diff --git a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/source.diff b/logs/multi_PPO/7d424514cba011eca2d8acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/sqlite.db b/logs/multi_PPO/7d424514cba011eca2d8acde48001122/sqlite.db
+deleted file mode 100644
+index 3e8adf4..0000000
+Binary files a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/tensorboard/events.out.tfevents.1651665094.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46725.0 b/logs/multi_PPO/7d424514cba011eca2d8acde48001122/tensorboard/events.out.tfevents.1651665094.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46725.0
+deleted file mode 100644
+index e2c9f6e..0000000
+Binary files a/logs/multi_PPO/7d424514cba011eca2d8acde48001122/tensorboard/events.out.tfevents.1651665094.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46725.0 and /dev/null differ
+diff --git a/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/indicators.yaml b/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/pids/0.pid b/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/pids/0.pid
+deleted file mode 100644
+index 3b63136..0000000
+--- a/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-49264
+\ No newline at end of file
+diff --git a/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/run.yaml b/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/run.yaml
+deleted file mode 100644
+index 1bf49fe..0000000
+--- a/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 08:34:11
+-uuid: 7ff9c682cba611ec96edacde48001122
+diff --git a/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/source.diff b/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/7ff9c682cba611ec96edacde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/indicators.yaml b/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/pids/0.pid b/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/pids/0.pid
+deleted file mode 100644
+index ee1b4ce..0000000
+--- a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-40848
+\ No newline at end of file
+diff --git a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/run.yaml b/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/run.yaml
+deleted file mode 100644
+index abad17f..0000000
+--- a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 05:49:51
+-uuid: 8abda186cb8f11ec8761acde48001122
+diff --git a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/source.diff b/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/sqlite.db b/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/sqlite.db
+deleted file mode 100644
+index a988304..0000000
+Binary files a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/tensorboard/events.out.tfevents.1651657812.1x-nat-vl930-172-30-89-63.wireless.umass.edu.40848.0 b/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/tensorboard/events.out.tfevents.1651657812.1x-nat-vl930-172-30-89-63.wireless.umass.edu.40848.0
+deleted file mode 100644
+index 5afc8b1..0000000
+Binary files a/logs/multi_PPO/8abda186cb8f11ec8761acde48001122/tensorboard/events.out.tfevents.1651657812.1x-nat-vl930-172-30-89-63.wireless.umass.edu.40848.0 and /dev/null differ
+diff --git a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/indicators.yaml b/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/indicators.yaml
+deleted file mode 100644
+index 8693c82..0000000
+--- a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,70 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/pids/0.pid b/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/pids/0.pid
+deleted file mode 100644
+index aabbdef..0000000
+--- a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-41282
+\ No newline at end of file
+diff --git a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/run.yaml b/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/run.yaml
+deleted file mode 100644
+index a2fdba4..0000000
+--- a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 06:04:12
+-uuid: 8c57e590cb9111ecac4cacde48001122
+diff --git a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/source.diff b/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/sqlite.db b/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/sqlite.db
+deleted file mode 100644
+index fe9fe75..0000000
+Binary files a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/tensorboard/events.out.tfevents.1651658785.1x-nat-vl930-172-30-89-63.wireless.umass.edu.41282.0 b/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/tensorboard/events.out.tfevents.1651658785.1x-nat-vl930-172-30-89-63.wireless.umass.edu.41282.0
+deleted file mode 100644
+index b1dcd41..0000000
+Binary files a/logs/multi_PPO/8c57e590cb9111ecac4cacde48001122/tensorboard/events.out.tfevents.1651658785.1x-nat-vl930-172-30-89-63.wireless.umass.edu.41282.0 and /dev/null differ
+diff --git a/logs/multi_PPO/90272236cb7711ec9010acde48001122/indicators.yaml b/logs/multi_PPO/90272236cb7711ec9010acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/90272236cb7711ec9010acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/90272236cb7711ec9010acde48001122/pids/0.pid b/logs/multi_PPO/90272236cb7711ec9010acde48001122/pids/0.pid
+deleted file mode 100644
+index 2086634..0000000
+--- a/logs/multi_PPO/90272236cb7711ec9010acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-38120
+\ No newline at end of file
+diff --git a/logs/multi_PPO/90272236cb7711ec9010acde48001122/run.yaml b/logs/multi_PPO/90272236cb7711ec9010acde48001122/run.yaml
+deleted file mode 100644
+index b6ea0fb..0000000
+--- a/logs/multi_PPO/90272236cb7711ec9010acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 02:58:12
+-uuid: 90272236cb7711ec9010acde48001122
+diff --git a/logs/multi_PPO/90272236cb7711ec9010acde48001122/source.diff b/logs/multi_PPO/90272236cb7711ec9010acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/90272236cb7711ec9010acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/9185658ccba111ec8261acde48001122/indicators.yaml b/logs/multi_PPO/9185658ccba111ec8261acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/9185658ccba111ec8261acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/9185658ccba111ec8261acde48001122/pids/0.pid b/logs/multi_PPO/9185658ccba111ec8261acde48001122/pids/0.pid
+deleted file mode 100644
+index 7d39560..0000000
+--- a/logs/multi_PPO/9185658ccba111ec8261acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-47208
+\ No newline at end of file
+diff --git a/logs/multi_PPO/9185658ccba111ec8261acde48001122/run.yaml b/logs/multi_PPO/9185658ccba111ec8261acde48001122/run.yaml
+deleted file mode 100644
+index 10b7e63..0000000
+--- a/logs/multi_PPO/9185658ccba111ec8261acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 07:58:53
+-uuid: 9185658ccba111ec8261acde48001122
+diff --git a/logs/multi_PPO/9185658ccba111ec8261acde48001122/source.diff b/logs/multi_PPO/9185658ccba111ec8261acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/9185658ccba111ec8261acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/9185658ccba111ec8261acde48001122/sqlite.db b/logs/multi_PPO/9185658ccba111ec8261acde48001122/sqlite.db
+deleted file mode 100644
+index c72d6e8..0000000
+Binary files a/logs/multi_PPO/9185658ccba111ec8261acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/9185658ccba111ec8261acde48001122/tensorboard/events.out.tfevents.1651665566.1x-nat-vl930-172-30-89-63.wireless.umass.edu.47208.0 b/logs/multi_PPO/9185658ccba111ec8261acde48001122/tensorboard/events.out.tfevents.1651665566.1x-nat-vl930-172-30-89-63.wireless.umass.edu.47208.0
+deleted file mode 100644
+index 1a0456a..0000000
+Binary files a/logs/multi_PPO/9185658ccba111ec8261acde48001122/tensorboard/events.out.tfevents.1651665566.1x-nat-vl930-172-30-89-63.wireless.umass.edu.47208.0 and /dev/null differ
+diff --git a/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/indicators.yaml b/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/pids/0.pid b/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/pids/0.pid
+deleted file mode 100644
+index 8e96e0a..0000000
+--- a/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-36314
+\ No newline at end of file
+diff --git a/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/run.yaml b/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/run.yaml
+deleted file mode 100644
+index 3c2e1ea..0000000
+--- a/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 02:15:36
+-uuid: 9d065356cb7111ec95e4acde48001122
+diff --git a/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/source.diff b/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/9d065356cb7111ec95e4acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/indicators.yaml b/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/pids/0.pid b/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/pids/0.pid
+deleted file mode 100644
+index d7c3a12..0000000
+--- a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-45109
+\ No newline at end of file
+diff --git a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/run.yaml b/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/run.yaml
+deleted file mode 100644
+index d719db4..0000000
+--- a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 07:16:19
+-uuid: 9f2b1804cb9b11ec894bacde48001122
+diff --git a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/source.diff b/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/sqlite.db b/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/sqlite.db
+deleted file mode 100644
+index 40cfcc0..0000000
+Binary files a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/tensorboard/events.out.tfevents.1651663012.1x-nat-vl930-172-30-89-63.wireless.umass.edu.45109.0 b/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/tensorboard/events.out.tfevents.1651663012.1x-nat-vl930-172-30-89-63.wireless.umass.edu.45109.0
+deleted file mode 100644
+index b81505a..0000000
+Binary files a/logs/multi_PPO/9f2b1804cb9b11ec894bacde48001122/tensorboard/events.out.tfevents.1651663012.1x-nat-vl930-172-30-89-63.wireless.umass.edu.45109.0 and /dev/null differ
+diff --git a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/indicators.yaml b/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/indicators.yaml
+deleted file mode 100644
+index 8693c82..0000000
+--- a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,70 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/pids/0.pid b/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/pids/0.pid
+deleted file mode 100644
+index 74122da..0000000
+--- a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-43294
+\ No newline at end of file
+diff --git a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/run.yaml b/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/run.yaml
+deleted file mode 100644
+index d80d310..0000000
+--- a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 06:40:39
+-uuid: a390e7f2cb9611ecb875acde48001122
+diff --git a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/source.diff b/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/sqlite.db b/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/sqlite.db
+deleted file mode 100644
+index 8430b64..0000000
+Binary files a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/tensorboard/events.out.tfevents.1651660891.1x-nat-vl930-172-30-89-63.wireless.umass.edu.43294.0 b/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/tensorboard/events.out.tfevents.1651660891.1x-nat-vl930-172-30-89-63.wireless.umass.edu.43294.0
+deleted file mode 100644
+index c4dbcca..0000000
+Binary files a/logs/multi_PPO/a390e7f2cb9611ecb875acde48001122/tensorboard/events.out.tfevents.1651660891.1x-nat-vl930-172-30-89-63.wireless.umass.edu.43294.0 and /dev/null differ
+diff --git a/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/indicators.yaml b/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/pids/0.pid b/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/pids/0.pid
+deleted file mode 100644
+index 37f5ba7..0000000
+--- a/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-46399
+\ No newline at end of file
+diff --git a/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/run.yaml b/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/run.yaml
+deleted file mode 100644
+index 8035107..0000000
+--- a/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 07:45:10
+-uuid: a6ca1994cb9f11ecb15bacde48001122
+diff --git a/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/source.diff b/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/a6ca1994cb9f11ecb15bacde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/indicators.yaml b/logs/multi_PPO/b18f99cacba511eca3beacde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/pids/0.pid b/logs/multi_PPO/b18f99cacba511eca3beacde48001122/pids/0.pid
+deleted file mode 100644
+index 90124b6..0000000
+--- a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-48800
+\ No newline at end of file
+diff --git a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/run.yaml b/logs/multi_PPO/b18f99cacba511eca3beacde48001122/run.yaml
+deleted file mode 100644
+index 5e52f0f..0000000
+--- a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 08:28:25
+-uuid: b18f99cacba511eca3beacde48001122
+diff --git a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/source.diff b/logs/multi_PPO/b18f99cacba511eca3beacde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/sqlite.db b/logs/multi_PPO/b18f99cacba511eca3beacde48001122/sqlite.db
+deleted file mode 100644
+index 17dccca..0000000
+Binary files a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/tensorboard/events.out.tfevents.1651667341.1x-nat-vl930-172-30-89-63.wireless.umass.edu.48800.0 b/logs/multi_PPO/b18f99cacba511eca3beacde48001122/tensorboard/events.out.tfevents.1651667341.1x-nat-vl930-172-30-89-63.wireless.umass.edu.48800.0
+deleted file mode 100644
+index 5d61a48..0000000
+Binary files a/logs/multi_PPO/b18f99cacba511eca3beacde48001122/tensorboard/events.out.tfevents.1651667341.1x-nat-vl930-172-30-89-63.wireless.umass.edu.48800.0 and /dev/null differ
+diff --git a/logs/multi_PPO/b39d954ccba411ecb801acde48001122/indicators.yaml b/logs/multi_PPO/b39d954ccba411ecb801acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/b39d954ccba411ecb801acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/b39d954ccba411ecb801acde48001122/pids/0.pid b/logs/multi_PPO/b39d954ccba411ecb801acde48001122/pids/0.pid
+deleted file mode 100644
+index f68f0c5..0000000
+--- a/logs/multi_PPO/b39d954ccba411ecb801acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-48446
+\ No newline at end of file
+diff --git a/logs/multi_PPO/b39d954ccba411ecb801acde48001122/run.yaml b/logs/multi_PPO/b39d954ccba411ecb801acde48001122/run.yaml
+deleted file mode 100644
+index 055f530..0000000
+--- a/logs/multi_PPO/b39d954ccba411ecb801acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 08:21:19
+-uuid: b39d954ccba411ecb801acde48001122
+diff --git a/logs/multi_PPO/b39d954ccba411ecb801acde48001122/source.diff b/logs/multi_PPO/b39d954ccba411ecb801acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/b39d954ccba411ecb801acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/b601615ccb7611ecb490acde48001122/indicators.yaml b/logs/multi_PPO/b601615ccb7611ecb490acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/b601615ccb7611ecb490acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/b601615ccb7611ecb490acde48001122/pids/0.pid b/logs/multi_PPO/b601615ccb7611ecb490acde48001122/pids/0.pid
+deleted file mode 100644
+index 55108ea..0000000
+--- a/logs/multi_PPO/b601615ccb7611ecb490acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-37113
+\ No newline at end of file
+diff --git a/logs/multi_PPO/b601615ccb7611ecb490acde48001122/run.yaml b/logs/multi_PPO/b601615ccb7611ecb490acde48001122/run.yaml
+deleted file mode 100644
+index 0f77956..0000000
+--- a/logs/multi_PPO/b601615ccb7611ecb490acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 02:52:06
+-uuid: b601615ccb7611ecb490acde48001122
+diff --git a/logs/multi_PPO/b601615ccb7611ecb490acde48001122/source.diff b/logs/multi_PPO/b601615ccb7611ecb490acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/b601615ccb7611ecb490acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/bf8107accba611ecb774acde48001122/indicators.yaml b/logs/multi_PPO/bf8107accba611ecb774acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/bf8107accba611ecb774acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/bf8107accba611ecb774acde48001122/pids/0.pid b/logs/multi_PPO/bf8107accba611ecb774acde48001122/pids/0.pid
+deleted file mode 100644
+index b0aa406..0000000
+--- a/logs/multi_PPO/bf8107accba611ecb774acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-49422
+\ No newline at end of file
+diff --git a/logs/multi_PPO/bf8107accba611ecb774acde48001122/run.yaml b/logs/multi_PPO/bf8107accba611ecb774acde48001122/run.yaml
+deleted file mode 100644
+index a175340..0000000
+--- a/logs/multi_PPO/bf8107accba611ecb774acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 08:35:58
+-uuid: bf8107accba611ecb774acde48001122
+diff --git a/logs/multi_PPO/bf8107accba611ecb774acde48001122/source.diff b/logs/multi_PPO/bf8107accba611ecb774acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/bf8107accba611ecb774acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/indicators.yaml b/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/pids/0.pid b/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/pids/0.pid
+deleted file mode 100644
+index 0c708e5..0000000
+--- a/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-36825
+\ No newline at end of file
+diff --git a/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/run.yaml b/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/run.yaml
+deleted file mode 100644
+index 8a03dc2..0000000
+--- a/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 02:45:13
+-uuid: bfeadfa0cb7511ec8a7eacde48001122
+diff --git a/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/source.diff b/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/bfeadfa0cb7511ec8a7eacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/indicators.yaml b/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/pids/0.pid b/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/pids/0.pid
+deleted file mode 100644
+index f747383..0000000
+--- a/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-38223
+\ No newline at end of file
+diff --git a/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/run.yaml b/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/run.yaml
+deleted file mode 100644
+index 4b8b771..0000000
+--- a/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 02:59:34
+-uuid: c12826a0cb7711ec8c73acde48001122
+diff --git a/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/source.diff b/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/c12826a0cb7711ec8c73acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/indicators.yaml b/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/indicators.yaml
+deleted file mode 100644
+index 8693c82..0000000
+--- a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,70 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/pids/0.pid b/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/pids/0.pid
+deleted file mode 100644
+index 2b4bf4d..0000000
+--- a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-42182
+\ No newline at end of file
+diff --git a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/run.yaml b/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/run.yaml
+deleted file mode 100644
+index 7743cc6..0000000
+--- a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 06:34:22
+-uuid: c2c2c3e4cb9511ec97b6acde48001122
+diff --git a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/source.diff b/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/sqlite.db b/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/sqlite.db
+deleted file mode 100644
+index 38eb83f..0000000
+Binary files a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/tensorboard/events.out.tfevents.1651660521.1x-nat-vl930-172-30-89-63.wireless.umass.edu.42182.0 b/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/tensorboard/events.out.tfevents.1651660521.1x-nat-vl930-172-30-89-63.wireless.umass.edu.42182.0
+deleted file mode 100644
+index 05b8e81..0000000
+Binary files a/logs/multi_PPO/c2c2c3e4cb9511ec97b6acde48001122/tensorboard/events.out.tfevents.1651660521.1x-nat-vl930-172-30-89-63.wireless.umass.edu.42182.0 and /dev/null differ
+diff --git a/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/indicators.yaml b/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/pids/0.pid b/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/pids/0.pid
+deleted file mode 100644
+index f308eab..0000000
+--- a/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-36429
+\ No newline at end of file
+diff --git a/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/run.yaml b/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/run.yaml
+deleted file mode 100644
+index 6603fd8..0000000
+--- a/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 02:16:55
+-uuid: cbc0be70cb7111ecbe66acde48001122
+diff --git a/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/source.diff b/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/cbc0be70cb7111ecbe66acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/indicators.yaml b/logs/multi_PPO/d5949748cba111ecb52dacde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/pids/0.pid b/logs/multi_PPO/d5949748cba111ecb52dacde48001122/pids/0.pid
+deleted file mode 100644
+index 5728745..0000000
+--- a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-47397
+\ No newline at end of file
+diff --git a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/run.yaml b/logs/multi_PPO/d5949748cba111ecb52dacde48001122/run.yaml
+deleted file mode 100644
+index 274fe69..0000000
+--- a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 08:00:47
+-uuid: d5949748cba111ecb52dacde48001122
+diff --git a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/source.diff b/logs/multi_PPO/d5949748cba111ecb52dacde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/sqlite.db b/logs/multi_PPO/d5949748cba111ecb52dacde48001122/sqlite.db
+deleted file mode 100644
+index 551e83a..0000000
+Binary files a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/tensorboard/events.out.tfevents.1651665895.1x-nat-vl930-172-30-89-63.wireless.umass.edu.47397.0 b/logs/multi_PPO/d5949748cba111ecb52dacde48001122/tensorboard/events.out.tfevents.1651665895.1x-nat-vl930-172-30-89-63.wireless.umass.edu.47397.0
+deleted file mode 100644
+index e1f9427..0000000
+Binary files a/logs/multi_PPO/d5949748cba111ecb52dacde48001122/tensorboard/events.out.tfevents.1651665895.1x-nat-vl930-172-30-89-63.wireless.umass.edu.47397.0 and /dev/null differ
+diff --git a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/indicators.yaml b/logs/multi_PPO/e47eef7acb7811eca26facde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/pids/0.pid b/logs/multi_PPO/e47eef7acb7811eca26facde48001122/pids/0.pid
+deleted file mode 100644
+index 58acf9b..0000000
+--- a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-38742
+\ No newline at end of file
+diff --git a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/run.yaml b/logs/multi_PPO/e47eef7acb7811eca26facde48001122/run.yaml
+deleted file mode 100644
+index ea4945a..0000000
+--- a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 03:07:43
+-uuid: e47eef7acb7811eca26facde48001122
+diff --git a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/source.diff b/logs/multi_PPO/e47eef7acb7811eca26facde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/sqlite.db b/logs/multi_PPO/e47eef7acb7811eca26facde48001122/sqlite.db
+deleted file mode 100644
+index 9710991..0000000
+Binary files a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/tensorboard/events.out.tfevents.1651648119.1x-nat-vl930-172-30-89-63.wireless.umass.edu.38742.0 b/logs/multi_PPO/e47eef7acb7811eca26facde48001122/tensorboard/events.out.tfevents.1651648119.1x-nat-vl930-172-30-89-63.wireless.umass.edu.38742.0
+deleted file mode 100644
+index 9e66831..0000000
+Binary files a/logs/multi_PPO/e47eef7acb7811eca26facde48001122/tensorboard/events.out.tfevents.1651648119.1x-nat-vl930-172-30-89-63.wireless.umass.edu.38742.0 and /dev/null differ
+diff --git a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/indicators.yaml b/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/pids/0.pid b/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/pids/0.pid
+deleted file mode 100644
+index 7c1f40b..0000000
+--- a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-40631
+\ No newline at end of file
+diff --git a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/run.yaml b/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/run.yaml
+deleted file mode 100644
+index 8e1aa3c..0000000
+--- a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 05:45:13
+-uuid: e518a654cb8e11ecb11cacde48001122
+diff --git a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/source.diff b/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/sqlite.db b/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/sqlite.db
+deleted file mode 100644
+index b4ce9ac..0000000
+Binary files a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/tensorboard/events.out.tfevents.1651657533.1x-nat-vl930-172-30-89-63.wireless.umass.edu.40631.0 b/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/tensorboard/events.out.tfevents.1651657533.1x-nat-vl930-172-30-89-63.wireless.umass.edu.40631.0
+deleted file mode 100644
+index 0d61a36..0000000
+Binary files a/logs/multi_PPO/e518a654cb8e11ecb11cacde48001122/tensorboard/events.out.tfevents.1651657533.1x-nat-vl930-172-30-89-63.wireless.umass.edu.40631.0 and /dev/null differ
+diff --git a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/indicators.yaml b/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/pids/0.pid b/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/pids/0.pid
+deleted file mode 100644
+index 95f2ba7..0000000
+--- a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-38294
+\ No newline at end of file
+diff --git a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/run.yaml b/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/run.yaml
+deleted file mode 100644
+index 4ba62b9..0000000
+--- a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 03:00:43
+-uuid: ea5c1ec8cb7711ec9fbbacde48001122
+diff --git a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/source.diff b/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/sqlite.db b/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/sqlite.db
+deleted file mode 100644
+index 2400cb8..0000000
+Binary files a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/tensorboard/events.out.tfevents.1651647665.1x-nat-vl930-172-30-89-63.wireless.umass.edu.38294.0 b/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/tensorboard/events.out.tfevents.1651647665.1x-nat-vl930-172-30-89-63.wireless.umass.edu.38294.0
+deleted file mode 100644
+index ba26ea6..0000000
+Binary files a/logs/multi_PPO/ea5c1ec8cb7711ec9fbbacde48001122/tensorboard/events.out.tfevents.1651647665.1x-nat-vl930-172-30-89-63.wireless.umass.edu.38294.0 and /dev/null differ
+diff --git a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/indicators.yaml b/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/pids/0.pid b/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/pids/0.pid
+deleted file mode 100644
+index 5d0c636..0000000
+--- a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-46921
+\ No newline at end of file
+diff --git a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/run.yaml b/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/run.yaml
+deleted file mode 100644
+index e7c5fcc..0000000
+--- a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 07:54:14
+-uuid: eb0ffe6acba011ec8b1eacde48001122
+diff --git a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/source.diff b/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/sqlite.db b/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/sqlite.db
+deleted file mode 100644
+index 3d639d1..0000000
+Binary files a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/tensorboard/events.out.tfevents.1651665291.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46921.0 b/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/tensorboard/events.out.tfevents.1651665291.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46921.0
+deleted file mode 100644
+index 0c2c794..0000000
+Binary files a/logs/multi_PPO/eb0ffe6acba011ec8b1eacde48001122/tensorboard/events.out.tfevents.1651665291.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46921.0 and /dev/null differ
+diff --git a/logs/multi_PPO/eb855708cb7511eca885acde48001122/indicators.yaml b/logs/multi_PPO/eb855708cb7511eca885acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/eb855708cb7511eca885acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/eb855708cb7511eca885acde48001122/pids/0.pid b/logs/multi_PPO/eb855708cb7511eca885acde48001122/pids/0.pid
+deleted file mode 100644
+index b77910a..0000000
+--- a/logs/multi_PPO/eb855708cb7511eca885acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-36912
+\ No newline at end of file
+diff --git a/logs/multi_PPO/eb855708cb7511eca885acde48001122/run.yaml b/logs/multi_PPO/eb855708cb7511eca885acde48001122/run.yaml
+deleted file mode 100644
+index b36bdd0..0000000
+--- a/logs/multi_PPO/eb855708cb7511eca885acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 02:46:26
+-uuid: eb855708cb7511eca885acde48001122
+diff --git a/logs/multi_PPO/eb855708cb7511eca885acde48001122/source.diff b/logs/multi_PPO/eb855708cb7511eca885acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/eb855708cb7511eca885acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/indicators.yaml b/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/indicators.yaml
+deleted file mode 100644
+index 8693c82..0000000
+--- a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,70 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/pids/0.pid b/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/pids/0.pid
+deleted file mode 100644
+index 53a4aec..0000000
+--- a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-46525
+\ No newline at end of file
+diff --git a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/run.yaml b/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/run.yaml
+deleted file mode 100644
+index dce7659..0000000
+--- a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 07:47:07
+-uuid: ec747a2acb9f11ec97f1acde48001122
+diff --git a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/source.diff b/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/sqlite.db b/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/sqlite.db
+deleted file mode 100644
+index 5ff9db4..0000000
+Binary files a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/tensorboard/events.out.tfevents.1651664921.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46525.0 b/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/tensorboard/events.out.tfevents.1651664921.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46525.0
+deleted file mode 100644
+index 2e61544..0000000
+Binary files a/logs/multi_PPO/ec747a2acb9f11ec97f1acde48001122/tensorboard/events.out.tfevents.1651664921.1x-nat-vl930-172-30-89-63.wireless.umass.edu.46525.0 and /dev/null differ
+diff --git a/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/indicators.yaml b/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/pids/0.pid b/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/pids/0.pid
+deleted file mode 100644
+index 24dadb2..0000000
+--- a/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-36223
+\ No newline at end of file
+diff --git a/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/run.yaml b/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/run.yaml
+deleted file mode 100644
+index 8ce661a..0000000
+--- a/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 02:10:45
+-uuid: ef385e72cb7011ec96acacde48001122
+diff --git a/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/source.diff b/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/ef385e72cb7011ec96acacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/f494322acb9711ec986eacde48001122/indicators.yaml b/logs/multi_PPO/f494322acb9711ec986eacde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/f494322acb9711ec986eacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/f494322acb9711ec986eacde48001122/pids/0.pid b/logs/multi_PPO/f494322acb9711ec986eacde48001122/pids/0.pid
+deleted file mode 100644
+index 669d90e..0000000
+--- a/logs/multi_PPO/f494322acb9711ec986eacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-44028
+\ No newline at end of file
+diff --git a/logs/multi_PPO/f494322acb9711ec986eacde48001122/run.yaml b/logs/multi_PPO/f494322acb9711ec986eacde48001122/run.yaml
+deleted file mode 100644
+index c7ed2cf..0000000
+--- a/logs/multi_PPO/f494322acb9711ec986eacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 06:50:04
+-uuid: f494322acb9711ec986eacde48001122
+diff --git a/logs/multi_PPO/f494322acb9711ec986eacde48001122/source.diff b/logs/multi_PPO/f494322acb9711ec986eacde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/f494322acb9711ec986eacde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/f494322acb9711ec986eacde48001122/sqlite.db b/logs/multi_PPO/f494322acb9711ec986eacde48001122/sqlite.db
+deleted file mode 100644
+index 3546cf5..0000000
+Binary files a/logs/multi_PPO/f494322acb9711ec986eacde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/f494322acb9711ec986eacde48001122/tensorboard/events.out.tfevents.1651661437.1x-nat-vl930-172-30-89-63.wireless.umass.edu.44028.0 b/logs/multi_PPO/f494322acb9711ec986eacde48001122/tensorboard/events.out.tfevents.1651661437.1x-nat-vl930-172-30-89-63.wireless.umass.edu.44028.0
+deleted file mode 100644
+index 852600d..0000000
+Binary files a/logs/multi_PPO/f494322acb9711ec986eacde48001122/tensorboard/events.out.tfevents.1651661437.1x-nat-vl930-172-30-89-63.wireless.umass.edu.44028.0 and /dev/null differ
+diff --git a/logs/multi_PPO/f97987dccba511ec877cacde48001122/indicators.yaml b/logs/multi_PPO/f97987dccba511ec877cacde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/f97987dccba511ec877cacde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/f97987dccba511ec877cacde48001122/pids/0.pid b/logs/multi_PPO/f97987dccba511ec877cacde48001122/pids/0.pid
+deleted file mode 100644
+index 3766c48..0000000
+--- a/logs/multi_PPO/f97987dccba511ec877cacde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-48944
+\ No newline at end of file
+diff --git a/logs/multi_PPO/f97987dccba511ec877cacde48001122/run.yaml b/logs/multi_PPO/f97987dccba511ec877cacde48001122/run.yaml
+deleted file mode 100644
+index 5418d54..0000000
+--- a/logs/multi_PPO/f97987dccba511ec877cacde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 08:30:26
+-uuid: f97987dccba511ec877cacde48001122
+diff --git a/logs/multi_PPO/f97987dccba511ec877cacde48001122/source.diff b/logs/multi_PPO/f97987dccba511ec877cacde48001122/source.diff
+deleted file mode 100644
+index 3bd2a08..0000000
+--- a/logs/multi_PPO/f97987dccba511ec877cacde48001122/source.diff
++++ /dev/null
+@@ -1,9 +0,0 @@
+-diff --git a/.DS_Store b/.DS_Store
+-index fc47c7c..b2dc61f 100644
+-Binary files a/.DS_Store and b/.DS_Store differ
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/indicators.yaml b/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/indicators.yaml
+deleted file mode 100644
+index cb90a23..0000000
+--- a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-indicators:
+-  clip_fraction:
+-    class_name: Scalar
+-    is_print: true
+-    name: clip_fraction
+-  entropy_bonus:
+-    class_name: Scalar
+-    is_print: true
+-    name: entropy_bonus
+-  kl_div:
+-    class_name: Scalar
+-    is_print: true
+-    name: kl_div
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  policy_reward:
+-    class_name: Scalar
+-    is_print: true
+-    name: policy_reward
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.loop:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.loop
+-  vf_loss:
+-    class_name: Scalar
+-    is_print: true
+-    name: vf_loss
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  length:
+-    class_name: Queue
+-    is_print: true
+-    name: length
+-    queue_size: 100
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  reward:
+-    class_name: Queue
+-    is_print: true
+-    name: reward
+-    queue_size: 100
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/pids/0.pid b/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/pids/0.pid
+deleted file mode 100644
+index 1eb58ea..0000000
+--- a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-44258
+\ No newline at end of file
+diff --git a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/run.yaml b/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/run.yaml
+deleted file mode 100644
+index 899d520..0000000
+--- a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- multi
+-- PPO
+-trial_date: '2022-05-04'
+-trial_time: 06:57:26
+-uuid: fbe2b2dacb9811ec8c68acde48001122
+diff --git a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/source.diff b/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/sqlite.db b/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/sqlite.db
+deleted file mode 100644
+index 821a34a..0000000
+Binary files a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/sqlite.db and /dev/null differ
+diff --git a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/tensorboard/events.out.tfevents.1651661878.1x-nat-vl930-172-30-89-63.wireless.umass.edu.44258.0 b/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/tensorboard/events.out.tfevents.1651661878.1x-nat-vl930-172-30-89-63.wireless.umass.edu.44258.0
+deleted file mode 100644
+index 54c1b13..0000000
+Binary files a/logs/multi_PPO/fbe2b2dacb9811ec8c68acde48001122/tensorboard/events.out.tfevents.1651661878.1x-nat-vl930-172-30-89-63.wireless.umass.edu.44258.0 and /dev/null differ
+diff --git a/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/indicators.yaml b/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/indicators.yaml
+deleted file mode 100644
+index 4786772..0000000
+--- a/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/indicators.yaml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-indicators: {}
+-wildcards:
+-  '*':
+-    class_name: Scalar
+-    is_print: true
+-    name: '*'
+-  grad.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: grad.*
+-  hp.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: hp.*
+-  module.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: module.*
+-  optim.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: optim.*
+-  param.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: param.*
+-  time.*:
+-    class_name: Scalar
+-    is_print: false
+-    name: time.*
+diff --git a/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/pids/0.pid b/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/pids/0.pid
+deleted file mode 100644
+index d9a74b0..0000000
+--- a/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/pids/0.pid
++++ /dev/null
+@@ -1 +0,0 @@
+-36504
+\ No newline at end of file
+diff --git a/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/run.yaml b/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/run.yaml
+deleted file mode 100644
+index 03f058e..0000000
+--- a/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/run.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-comment: ''
+-commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+-commit_message: Added normalizing layers
+-is_dirty: true
+-load_run: null
+-name: multi_PPO
+-notes: ''
+-python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+-repo_remotes:
+-- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+-start_step: 0
+-tags:
+-- PPO
+-- multi
+-trial_date: '2022-05-04'
+-trial_time: 02:18:22
+-uuid: ffd43b88cb7111ecb3f4acde48001122
+diff --git a/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/source.diff b/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/source.diff
+deleted file mode 100644
+index 6ce5044..0000000
+--- a/logs/multi_PPO/ffd43b88cb7111ecb3f4acde48001122/source.diff
++++ /dev/null
+@@ -1,6 +0,0 @@
+-diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+-index d252f57..6f909bf 100644
+-Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+-diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+-index 3da14fb..c88eb7e 100644
+-Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ
+\ No newline at end of file
+diff --git a/multi_PPO.py b/multi_PPO.py
+index 1fd4898..5467a6e 100644
+--- a/multi_PPO.py
++++ b/multi_PPO.py
+@@ -180,7 +180,7 @@ class Main:
+         self.gamma = 0.99 
+         self.lamda = 0.95 
+ 
+-        self.updates = 100 # number of updates
++        self.updates = 3 # number of updates/iterations
+         self.epochs = 4
+         self.num_workers = 10 # number of worker processes
+         self.worker_steps = 128 # number of steps to run on each process for single update
+@@ -203,6 +203,7 @@ class Main:
+             self.observation[i] = worker.child.recv()
+         
+         self.model = Model().to(device)
++        experiment.add_pytorch_models({'base': self.model})
+         self.optimizer = optim.Adam(self.model.parameters(), lr=0.00025)
+ 
+     def sample(self):
+@@ -425,12 +426,13 @@ class Main:
+ 
+ if __name__ == '__main__':
+     # Run experiment
++    # experiment.create(uuid='breakout_PPO_389', name="Breakout_Training")
+     experiment.create()
+     m = Main()
+     # Load Experiment from past experiment
+     print("... Loading Model ...")
+-    experiment.load(run_uuid="36b69162cb9711ec8302acde48001122") # Changes every time 
+-    # Next: 3f929d0acb9011ecbe5bacde48001122
++    # experiment.load(run_uuid = 'asdfhsahsdfsfs')
++    experiment.load(run_uuid="breakout_PPO_389") 
+     experiment.start()
+     m.run_training_loop()
+     m.destroy()

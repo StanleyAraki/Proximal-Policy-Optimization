@@ -1,0 +1,17 @@
+comment: ''
+commit: 4408ccfd14f51b980254c1ace8ab216684447ef0
+commit_message: Added new implementation of PPO algorithm...
+is_dirty: true
+load_run: breakout_PPO_389
+name: Breakout_Training
+notes: ''
+python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+repo_remotes:
+- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+start_step: 2
+tags:
+- Breakout
+- Training
+trial_date: '2022-05-04'
+trial_time: 09:48:06
+uuid: breakout_PPO_389_1
