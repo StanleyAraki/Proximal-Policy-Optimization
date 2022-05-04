@@ -1,0 +1,6 @@
+diff --git a/plots/Breakout_Conv.png b/plots/Breakout_Conv.png
+index d252f57..6f909bf 100644
+Binary files a/plots/Breakout_Conv.png and b/plots/Breakout_Conv.png differ
+diff --git a/tmp/ppo/actor_torch_ppo_Breakout_conv b/tmp/ppo/actor_torch_ppo_Breakout_conv
+index 3da14fb..c88eb7e 100644
+Binary files a/tmp/ppo/actor_torch_ppo_Breakout_conv and b/tmp/ppo/actor_torch_ppo_Breakout_conv differ

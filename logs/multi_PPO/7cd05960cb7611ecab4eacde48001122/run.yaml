@@ -1,0 +1,17 @@
+comment: ''
+commit: 98813db9e2099cc80568a79ad3d9031a18a2c590
+commit_message: Added normalizing layers
+is_dirty: true
+load_run: null
+name: multi_PPO
+notes: ''
+python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO.py
+repo_remotes:
+- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+start_step: 0
+tags:
+- multi
+- PPO
+trial_date: '2022-05-04'
+trial_time: 02:50:30
+uuid: 7cd05960cb7611ecab4eacde48001122
