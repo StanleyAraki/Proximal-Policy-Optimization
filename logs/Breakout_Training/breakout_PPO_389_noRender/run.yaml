@@ -1,0 +1,17 @@
+comment: ''
+commit: 977d0522cbc93d62db7a5ce834c10aeef76f2aab
+commit_message: Added load and save to model, trained for 600 iterations
+is_dirty: true
+load_run: null
+name: Breakout_Training
+notes: ''
+python_file: /Users/stanleyaraki/Desktop/PPO_389/Proximal-Policy-Optimization/multi_PPO_noRender.py
+repo_remotes:
+- https://github.com/StanleyAraki/Proximal-Policy-Optimization.git
+start_step: 0
+tags:
+- Breakout
+- Training
+trial_date: '2022-05-04'
+trial_time: '14:03:03'
+uuid: breakout_PPO_389_noRender

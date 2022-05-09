@@ -1,10 +1,10 @@
 # Import necessary libraries
-from email import policy
 import multiprocessing
 import multiprocessing.connection 
 from typing import Dict, List
 
 import gym 
+import cv2
 import numpy as np
 import torch
 from labml import monit, tracker, logger, experiment 
@@ -30,7 +30,7 @@ class Game:
     '''
 
     def __init__(self, seed): # don't need seed in our implementation
-        self.env = gym.make('BreakoutDeterministic-v4')
+        self.env = gym.make('BreakoutDeterministic-v4', render_mode='human')
         self.env.seed(seed)
         self.observation_4 = np.zeros((4, 80, 80))
         self.rewards = []
@@ -87,12 +87,9 @@ class Game:
     # Preprocess input to (80, 80)
     @staticmethod
     def preprocess(image): # instead of using cv2 use generic preprocessing
-        image = image[35:195]  # crop
-        image = image[::2, ::2, 0]  # downsample by factor of 2
-        image[image == 144] = 0  # erase background (background type 1)
-        image[image == 109] = 0  # erase background (background type 2)
-        image[image != 0] = 1  # everything else (paddles, ball) just set to 1
-        return np.reshape(image, (80, 80))
+        image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+        image = cv2.resize(image, (80, 80), interpolation=cv2.INTER_AREA)
+        return image
 
 def worker_process(remote, seed): # Each worker runs this 
     '''
@@ -176,7 +173,7 @@ class Main:
         self.gamma = 0.99 
         self.lamda = 0.95 
 
-        self.updates = 1200 # number of updates/iterations
+        self.updates = 5000 # number of updates/iterations
         self.epochs = 4
         self.num_workers = 10 # number of worker processes
         self.worker_steps = 128 # number of steps to run on each process for single update
@@ -422,11 +419,11 @@ class Main:
 
 if __name__ == '__main__':
     # Run experiment
-    experiment.create(uuid="breakout_PPO_389_2", name='Breakout_Training')
+    experiment.create(uuid="breakout_PPO_389_Render_Demo", name='Breakout_Training')
     m = Main()
     # Load Experiment from past experiment
     print("... Loading Model ...")
-    experiment.load(run_uuid="breakout_PPO_389_1", checkpoint=561) 
+    # experiment.load(run_uuid="breakout_PPO_389_noRender", checkpoint=561) 
     experiment.start()
     m.run_training_loop()
     m.destroy()

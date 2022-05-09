@@ -1,0 +1,42 @@
+diff --git a/multi_PPO.py b/multi_PPO.py
+index 8262588..f3f4861 100644
+--- a/multi_PPO.py
++++ b/multi_PPO.py
+@@ -30,7 +30,7 @@ class Game:
+     '''
+ 
+     def __init__(self, seed): # don't need seed in our implementation
+-        self.env = gym.make('BreakoutDeterministic-v4')
++        self.env = gym.make('BreakoutDeterministic-v4', render_mode = 'human')
+         self.env.seed(seed)
+         self.observation_4 = np.zeros((4, 80, 80))
+         self.rewards = []
+@@ -176,7 +176,7 @@ class Main:
+         self.gamma = 0.99 
+         self.lamda = 0.95 
+ 
+-        self.updates = 1200 # number of updates/iterations
++        self.updates = 5000 # number of updates/iterations
+         self.epochs = 4
+         self.num_workers = 10 # number of worker processes
+         self.worker_steps = 128 # number of steps to run on each process for single update
+@@ -200,6 +200,10 @@ class Main:
+         
+         self.model = Model().to(device)
+         experiment.add_pytorch_models({'base': self.model})
++        # Load model here
++
++        experiment.load(run_uuid="breakout_PPO_389_1", checkpoint=561) 
++
+         self.optimizer = optim.Adam(self.model.parameters(), lr=0.00025)
+ 
+     def sample(self):
+@@ -426,7 +430,7 @@ if __name__ == '__main__':
+     m = Main()
+     # Load Experiment from past experiment
+     print("... Loading Model ...")
+-    experiment.load(run_uuid="breakout_PPO_389_1", checkpoint=561) 
++    # experiment.load(run_uuid="breakout_PPO_389_1", checkpoint=561) 
+     experiment.start()
+     m.run_training_loop()
+     m.destroy()
